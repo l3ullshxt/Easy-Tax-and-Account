@@ -29,18 +29,15 @@ export const siteConfig = {
   },
 
   contact: {
-    // TODO: เปลี่ยนเป็นข้อมูลติดต่อจริง
     lineUrl: 'https://lin.ee/wkl0qUa',
     lineId: '@557oijoq',
     phoneDisplay: '096-287-9968',
     phoneHref: 'tel:+66962879968',
     email: 'easytaxandacc@gmail.com',
     facebookName: 'Easy Tax and Account',
-    // TODO: ใส่ลิงก์เพจ Facebook จริง
-    facebookUrl: 'https://www.facebook.com/',
+    facebookUrl: 'https://www.facebook.com/share/1Dq3sYN951/',
     tiktokName: 'Easy Tax and Account',
-    // TODO: ใส่ลิงก์บัญชี TikTok จริง (เช่น https://www.tiktok.com/@username)
-    tiktokUrl: 'https://www.tiktok.com/',
+    tiktokUrl: 'https://www.tiktok.com/@easytaxandacc',
     serviceArea: 'ดูแลลูกค้าออนไลน์ทั่วประเทศ',
     officeHours: 'จันทร์–ศุกร์ 09:00–18:00 น.',
   },
