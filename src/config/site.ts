@@ -32,8 +32,8 @@ export const siteConfig = {
     // TODO: เปลี่ยนเป็นข้อมูลติดต่อจริง
     lineUrl: 'https://lin.ee/wkl0qUa',
     lineId: '@557oijoq',
-    phoneDisplay: '082-896-9983',
-    phoneHref: 'tel:+66828969983',
+    phoneDisplay: '096-287-9968',
+    phoneHref: 'tel:+66962879968',
     email: 'easytaxandacc@gmail.com',
     facebookName: 'Easy Tax and Account',
     // TODO: ใส่ลิงก์เพจ Facebook จริง
