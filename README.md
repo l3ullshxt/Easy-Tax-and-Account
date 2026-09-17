@@ -51,7 +51,7 @@ src/
 | **ราคา / แพ็กเกจ** | `src/data/pricing.ts` (ราคา, รายการ, หมายเหตุราคา) |
 | **LINE** | `contact.lineUrl` ใน `src/config/site.ts` (ตอนนี้ `https://lin.ee/wkl0qUa`) — ใช้กับปุ่มลอย, CTA, เมนูมือถือ, footer, ฟอร์ม |
 | **Form backend** | Google Sheets — ดูหัวข้อ "เชื่อมฟอร์มกับ Google Sheets" ด้านล่าง (โค้ดส่งข้อมูลอยู่ที่ `src/lib/submitLead.ts`) |
-| **โดเมน / SEO** | `index.html` (canonical, og:url, og:image), `public/robots.txt`, `public/sitemap.xml` |
+| **โดเมน / SEO** | ตอนนี้ใช้ `https://easy-tax-and-account.vercel.app` — ถ้าเปลี่ยนโดเมน ให้ค้นหาคำนี้แล้วแก้ใน `index.html` (canonical, og:url, og:image, JSON-LD), `public/robots.txt`, `public/sitemap.xml` |
 | **บริการ / บทความ** | `src/data/services.ts`, `src/data/articles.ts` (`featured: true` = แสดงตั้งแต่แรก) |
 
 ## พฤติกรรมของปุ่มหลัก

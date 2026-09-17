@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# TODO: เปลี่ยนเป็นโดเมนจริง
-Sitemap: https://www.easytaxaccount.com/sitemap.xml
+Sitemap: https://easy-tax-and-account.vercel.app/sitemap.xml

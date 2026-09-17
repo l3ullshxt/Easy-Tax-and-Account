@@ -17,8 +17,10 @@
     <meta name="author" content="Easy Tax & Account" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#1a643d" />
-    <!-- TODO: เปลี่ยนเป็นโดเมนจริงของเว็บไซต์ -->
-    <link rel="canonical" href="https://www.easytaxaccount.com/" />
+    <!-- URL หลักของเว็บ — ถ้าเปลี่ยนโดเมน ให้แก้ทุกจุดที่มี easy-tax-and-account.vercel.app (ดู README) -->
+    <link rel="canonical" href="https://easy-tax-and-account.vercel.app/" />
+    <!-- Google Search Console: ใส่รหัสยืนยันความเป็นเจ้าของเว็บที่นี่ -->
+    <!-- <meta name="google-site-verification" content="YOUR_CODE" /> -->
 
     <!-- Open Graph / Social share -->
     <meta property="og:type" content="website" />
@@ -29,12 +31,15 @@
       property="og:description"
       content="รับทำบัญชีรายเดือน ยื่นภาษี ปิดงบ จดบริษัท และให้คำปรึกษาด้านบัญชี ดูแลแบบเข้าใจง่ายสำหรับ SME และธุรกิจออนไลน์"
     />
-    <meta property="og:url" content="https://www.easytaxaccount.com/" />
-    <!-- TODO: เปลี่ยนเป็นรูป OG ขนาด 1200x630 (.jpg/.png) เพื่อให้แสดงผลบน Facebook / LINE ได้ครบ -->
-    <meta property="og:image" content="https://www.easytaxaccount.com/images/og-image.jpg" />
+    <meta property="og:url" content="https://easy-tax-and-account.vercel.app/" />
+    <meta property="og:image" content="https://easy-tax-and-account.vercel.app/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Easy Tax & Account — บัญชีไม่ยาก ถ้ามี Easy อยู่ข้าง ๆ" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Fonts: Anuphan (หลัก), Caveat (ตัวเขียน Easy), Mali (ลายมือภาษาไทย) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,14 +49,16 @@
       rel="stylesheet"
     />
 
-    <!-- Structured data (LocalBusiness / AccountingService) — TODO: อัปเดตข้อมูลติดต่อจริง -->
+    <!-- Structured data (AccountingService) สำหรับ Google -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "AccountingService",
         "name": "Easy Tax & Account",
         "description": "สำนักงานบัญชีสำหรับ SME และธุรกิจออนไลน์ รับทำบัญชีรายเดือน ยื่นภาษี ปิดงบ จดบริษัท และให้คำปรึกษาด้านบัญชี",
-        "url": "https://www.easytaxaccount.com/",
+        "url": "https://easy-tax-and-account.vercel.app/",
+        "image": "https://easy-tax-and-account.vercel.app/images/og-image.png",
+        "logo": "https://easy-tax-and-account.vercel.app/apple-touch-icon.png",
         "areaServed": "TH",
         "priceRange": "฿฿",
         "email": "easytaxandacc@gmail.com",
