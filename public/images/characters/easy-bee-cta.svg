@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="126 78 466 362" role="img" aria-labelledby="title desc">
+  <title id="title">พี่ Easy และน้อง Bee (CTA)</title>
+  <desc id="desc">Illustration placeholder: พี่ Easy (ผู้หญิงผมยาวสีน้ำตาล สวมเบลเซอร์สีเขียว) และน้อง Bee (ผู้ชายผมสีน้ำตาล สวมฮู้ดดี้สีเขียว) นั่งทำบัญชีด้วยกันที่โต๊ะทำงาน — เปลี่ยนเป็นภาพจริงได้ภายหลัง</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dff1e5"/>
+      <stop offset="1" stop-color="#f3faf5"/>
+    </linearGradient>
+    <linearGradient id="desk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f1e6d0"/>
+      <stop offset="1" stop-color="#e2d2b3"/>
+    </linearGradient>
+    <linearGradient id="blazer" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#25824e"/>
+      <stop offset="1" stop-color="#196a3d"/>
+    </linearGradient>
+    <linearGradient id="hoodie" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2d9559"/>
+      <stop offset="1" stop-color="#207a47"/>
+    </linearGradient>
+    <linearGradient id="lid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f1f4f5"/>
+      <stop offset="1" stop-color="#d3dadd"/>
+    </linearGradient>
+    <linearGradient id="hairW" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6e452b"/>
+      <stop offset="1" stop-color="#553321"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== พี่ Easy ===== -->
+  <g>
+    <path d="M160 190C150 120 185 94 227 94c45 0 75 28 67 96 6 60 10 110 6 148H152c-4-38 0-88 8-148z" fill="url(#hairW)"/>
+    <path d="M136 440c-4-80 4-140 36-164 13-10 28-16 40-18h26c12 2 27 8 40 18 32 24 40 84 36 164z" fill="url(#blazer)"/>
+    <path d="M208 222h34v44c-6 8-28 8-34 0z" fill="#ecbd9d"/>
+    <path d="M202 258l23 64 23-64z" fill="#fff"/>
+    <path d="M198 258l27 70-15 20-30-74z" fill="#16613a"/>
+    <path d="M252 258l-27 70 15 20 30-74z" fill="#16613a"/>
+    <circle cx="258" cy="356" r="3" fill="#0f4a2b"/>
+    <circle cx="258" cy="380" r="3" fill="#0f4a2b"/>
+    <!-- name badge -->
+    <rect x="166" y="316" width="30" height="18" rx="4" fill="#fff" opacity=".95"/>
+    <rect x="171" y="322" width="20" height="3" rx="1.5" fill="#f5c93a"/>
+    <rect x="171" y="328" width="14" height="2.5" rx="1.25" fill="#93cda9"/>
+    <!-- front hair strands -->
+    <path d="M178 150c-22 50-12 112-30 186 20 4 42-36 42-104 0-32-4-60-12-82z" fill="#6a4229"/>
+    <path d="M272 150c22 50 12 112 30 186-20 4-42-36-42-104 0-32 4-60 12-82z" fill="#6a4229"/>
+    <!-- ears -->
+    <ellipse cx="174" cy="185" rx="9" ry="13" fill="#f1c7aa"/>
+    <ellipse cx="276" cy="185" rx="9" ry="13" fill="#f1c7aa"/>
+    <circle cx="174" cy="203" r="3.5" fill="#f5c93a"/>
+    <circle cx="276" cy="203" r="3.5" fill="#f5c93a"/>
+    <!-- face -->
+    <path d="M173 170c0-42 23-54 52-54s52 12 52 54c0 42-21 68-52 68s-52-26-52-68z" fill="#f7d6bf"/>
+    <!-- bangs -->
+    <path d="M170 184c-6-60 26-84 60-84 38 0 60 26 51 84-7-28-23-46-43-53-14 19-40 33-62 39-3 4-5 9-6 14z" fill="#6a4229"/>
+    <path d="M204 112c18-8 42-7 58 4" stroke="#8d5c3c" stroke-width="4" stroke-linecap="round" fill="none" opacity=".7"/>
+    <!-- brows -->
+    <path d="M194 160q10-6 21-2" stroke="#553321" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M236 158q11-4 21 2" stroke="#553321" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <!-- eyes -->
+    <ellipse cx="205" cy="179" rx="5.5" ry="7" fill="#2b1d16"/>
+    <ellipse cx="246" cy="179" rx="5.5" ry="7" fill="#2b1d16"/>
+    <circle cx="207" cy="176" r="1.8" fill="#fff"/>
+    <circle cx="248" cy="176" r="1.8" fill="#fff"/>
+    <path d="M198 173l-4-3M253 173l4-3" stroke="#2b1d16" stroke-width="2" stroke-linecap="round"/>
+    <!-- nose, mouth, blush -->
+    <path d="M225 188q4 7-2 9" stroke="#d9a386" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M210 207q15 16 30 0q-15 6-30 0z" fill="#c65a4c"/>
+    <ellipse cx="190" cy="200" rx="9" ry="5" fill="#f2a39a" opacity=".45"/>
+    <ellipse cx="260" cy="200" rx="9" ry="5" fill="#f2a39a" opacity=".45"/>
+  </g>
+
+  <!-- ===== น้อง Bee ===== -->
+  <g>
+    <path d="M318 440c-4-80 4-140 38-164 14-10 30-16 44-18h30c14 2 30 8 44 18 34 24 42 84 38 164z" fill="url(#hoodie)"/>
+    <path d="M362 262c16-14 90-14 106 0-6 32-100 32-106 0z" fill="#196b3e"/>
+    <path d="M400 218h30v40c-6 8-24 8-30 0z" fill="#e6b08f"/>
+    <path d="M384 262c10-6 52-6 62 0-6 16-56 16-62 0z" fill="#dca283"/>
+    <path d="M402 280l-4 36M428 280l4 36" stroke="#e8f5ec" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="398" cy="318" r="3" fill="#e8f5ec"/>
+    <circle cx="432" cy="318" r="3" fill="#e8f5ec"/>
+    <text x="424" y="334" transform="rotate(-8 424 334)" font-family="'Brush Script MT','Segoe Script','Caveat',cursive" font-size="21" font-weight="700" fill="#e8f5ec">Easy</text>
+    <g transform="translate(0 12)">
+    <!-- ears -->
+    <ellipse cx="362" cy="172" rx="9" ry="13" fill="#f0c3a3"/>
+    <ellipse cx="468" cy="172" rx="9" ry="13" fill="#f0c3a3"/>
+    <!-- face -->
+    <path d="M363 164c0-40 23-56 52-56s52 16 52 56c0 42-21 66-52 66s-52-24-52-66z" fill="#f5ceb0"/>
+    <!-- hair -->
+    <path d="M356 178c-12-60 14-94 58-96 46-2 72 30 60 96-4-24-12-38-22-46-16 10-42 14-64 8-12 8-22 18-28 30-2 2-3 5-4 8z" fill="#5a3721"/>
+    <path d="M392 92c-16 8-26 24-26 42 10-16 24-26 42-30z" fill="#6b4329"/>
+    <path d="M404 96c16-6 36-4 50 6" stroke="#7d5234" stroke-width="4" stroke-linecap="round" fill="none" opacity=".7"/>
+    <!-- brows -->
+    <path d="M387 150q11-7 22-2" stroke="#4a2c1a" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M423 148q11-5 22 2" stroke="#4a2c1a" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <!-- eyes -->
+    <ellipse cx="398" cy="169" rx="5" ry="6.5" fill="#2b1d16"/>
+    <ellipse cx="434" cy="169" rx="5" ry="6.5" fill="#2b1d16"/>
+    <circle cx="400" cy="166.5" r="1.7" fill="#fff"/>
+    <circle cx="436" cy="166.5" r="1.7" fill="#fff"/>
+    <!-- nose, mouth, blush -->
+    <path d="M415 180q4 6-1 9" stroke="#d49c7c" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M396 196q19 26 40 0z" fill="#a8423a"/>
+    <path d="M399 197.5q16 7 34 0l-1 4q-16 8-32 0z" fill="#fff"/>
+    <ellipse cx="383" cy="192" rx="8" ry="4.5" fill="#f2a39a" opacity=".45"/>
+    <ellipse cx="449" cy="192" rx="8" ry="4.5" fill="#f2a39a" opacity=".45"/>
+    </g>
+    <!-- thumbs up arm -->
+    <path d="M488 292l40 74 18-72" fill="none" stroke="#17633a" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M488 292l40 74 18-72" fill="none" stroke="url(#hoodie)" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="524" y="244" width="46" height="42" rx="15" fill="#f5ceb0"/>
+    <rect x="530" y="206" width="18" height="50" rx="9" fill="#f5ceb0"/>
+    <path d="M552 256h15M552 266h15M552 276h13" stroke="#e0a987" stroke-width="2" stroke-linecap="round"/>
+    <rect x="524" y="282" width="46" height="16" rx="7" fill="#196b3e"/>
+  </g>
+
+  <!-- พี่ Easy arm resting -->
+  <path d="M168 306c-16 32-18 76-6 102 8 16 24 20 44 18" fill="none" stroke="#15603a" stroke-width="34" stroke-linecap="round"/>
+  <path d="M168 306c-16 32-18 76-6 102 8 16 24 20 44 18" fill="none" stroke="url(#blazer)" stroke-width="29" stroke-linecap="round"/>
+  <ellipse cx="214" cy="425" rx="16" ry="10.5" fill="#f7d6bf"/>
+  <path d="M203 416q-4 9 0 18" stroke="#f3f7f4" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+  <!-- Laptop -->
+  <rect x="252" y="316" width="164" height="112" rx="11" fill="url(#lid)"/>
+  <rect x="252" y="316" width="164" height="112" rx="11" fill="none" stroke="#c3ccd1" stroke-width="2"/>
+  <text x="334" y="376" text-anchor="middle" font-family="'Brush Script MT','Segoe Script','Caveat',cursive" font-size="32" font-weight="700" fill="#1f7a47">Easy</text>
+  <path d="M362 348l6-10M368 352l9-5" stroke="#f5c93a" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="334" y="396" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="8.5" font-weight="700" letter-spacing="1.2" fill="#1f7a47">TAX &amp; ACCOUNT</text>
+  <path d="M232 428h204l-10 11H242z" fill="#bcc5ca"/>
+
+  <!-- Mug -->
+  <path d="M470 381c-7-9 6-14 0-24M486 381c-7-9 6-14 0-24" stroke="#b9d9c5" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M500 400c16 0 16 26 0 26" stroke="#fff" stroke-width="7" fill="none"/>
+  <path d="M456 390h46v34a10 10 0 0 1-10 10h-26a10 10 0 0 1-10-10z" fill="#fff"/>
+  <text x="479" y="418" text-anchor="middle" font-family="'Brush Script MT','Segoe Script','Caveat',cursive" font-size="16" font-weight="700" fill="#1f7a47">Easy</text>
+
+</svg>

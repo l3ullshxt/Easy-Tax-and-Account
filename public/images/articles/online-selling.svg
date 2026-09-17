@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="t">
+  <title id="t">กล่องพัสดุและสมาร์ตโฟนร้านค้าออนไลน์ (placeholder)</title>
+  <rect width="400" height="250" fill="#f6efe2"/>
+  <circle cx="320" cy="60" r="80" fill="#e8f3eb"/>
+  <rect y="190" width="400" height="60" fill="#e7d8bb"/>
+  <rect y="186" width="400" height="8" fill="#efe3cc"/>
+  <!-- boxes -->
+  <rect x="40" y="120" width="110" height="70" rx="4" fill="#d6ab72"/>
+  <rect x="40" y="120" width="110" height="14" fill="#c99a5e"/>
+  <rect x="85" y="120" width="20" height="70" fill="#e9c795"/>
+  <rect x="60" y="66" width="80" height="56" rx="4" fill="#dfb57f"/>
+  <rect x="60" y="66" width="80" height="12" fill="#d0a36a"/>
+  <rect x="92" y="66" width="16" height="56" fill="#efd1a3"/>
+  <rect x="112" y="150" width="30" height="22" rx="2" fill="#fff"/>
+  <path d="M117 158h20M117 164h12" stroke="#93cda9" stroke-width="3" stroke-linecap="round"/>
+  <!-- phone -->
+  <g transform="rotate(8 250 130)">
+    <rect x="200" y="46" width="96" height="156" rx="16" fill="#1f2a24"/>
+    <rect x="207" y="56" width="82" height="136" rx="10" fill="#fff"/>
+    <rect x="215" y="66" width="66" height="10" rx="5" fill="#1a643d"/>
+    <rect x="215" y="84" width="30" height="30" rx="6" fill="#e1f1e6"/>
+    <rect x="251" y="84" width="30" height="30" rx="6" fill="#fff1c2"/>
+    <rect x="215" y="120" width="30" height="30" rx="6" fill="#fff1c2"/>
+    <rect x="251" y="120" width="30" height="30" rx="6" fill="#e1f1e6"/>
+    <rect x="215" y="160" width="66" height="20" rx="10" fill="#2f8f5b"/>
+    <path d="M238 170h20" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <!-- cart bubble -->
+  <circle cx="330" cy="80" r="26" fill="#f5c93a"/>
+  <path d="M316 72h5l5 16h14l4-11h-20" stroke="#10402a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="328" cy="93" r="2.5" fill="#10402a"/>
+  <circle cx="339" cy="93" r="2.5" fill="#10402a"/>
+  <!-- plant -->
+  <path d="M355 186c-4-30 6-50 24-58 2 24-8 46-24 58z" fill="#3f9a64"/>
+  <path d="M352 186c-16-18-30-20-40-16 6 14 20 22 40 20z" fill="#4caf73"/>
+  <rect x="338" y="176" width="34" height="18" rx="4" fill="#fbf7ef"/>
+</svg>

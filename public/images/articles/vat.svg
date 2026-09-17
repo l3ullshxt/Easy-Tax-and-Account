@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="t">
+  <title id="t">บล็อกไม้ตัวอักษร VAT (placeholder)</title>
+  <defs>
+    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8c893"/>
+      <stop offset="1" stop-color="#d2a86c"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="#f3ece0"/>
+  <circle cx="330" cy="40" r="90" fill="#e8f3eb"/>
+  <rect y="178" width="400" height="72" fill="#e3d4b8"/>
+  <rect y="174" width="400" height="8" fill="#ece0c8"/>
+  <!-- blocks -->
+  <g font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="54" text-anchor="middle" fill="#10402a">
+    <g transform="rotate(-6 110 140)">
+      <rect x="70" y="100" width="80" height="80" rx="8" fill="url(#wood)"/>
+      <path d="M70 172h80v8a8 8 0 0 1-8 8H78a8 8 0 0 1-8-8z" fill="#bd935a"/>
+      <text x="110" y="160">V</text>
+    </g>
+    <g>
+      <rect x="160" y="92" width="80" height="80" rx="8" fill="url(#wood)"/>
+      <path d="M160 164h80v8a8 8 0 0 1-8 8h-64a8 8 0 0 1-8-8z" fill="#bd935a"/>
+      <text x="200" y="152" fill="#1a643d">A</text>
+    </g>
+    <g transform="rotate(5 290 140)">
+      <rect x="250" y="100" width="80" height="80" rx="8" fill="url(#wood)"/>
+      <path d="M250 172h80v8a8 8 0 0 1-8 8h-64a8 8 0 0 1-8-8z" fill="#bd935a"/>
+      <text x="290" y="160">T</text>
+    </g>
+  </g>
+  <!-- coins -->
+  <g>
+    <ellipse cx="365" cy="206" rx="22" ry="7" fill="#e2b014"/>
+    <rect x="343" y="192" width="44" height="14" fill="#f5c93a"/>
+    <ellipse cx="365" cy="192" rx="22" ry="7" fill="#fbd86a"/>
+    <rect x="343" y="178" width="44" height="14" fill="#f5c93a"/>
+    <ellipse cx="365" cy="178" rx="22" ry="7" fill="#fde58f"/>
+  </g>
+  <!-- plant -->
+  <path d="M34 178c-4-34 8-56 28-64 2 28-10 52-28 64z" fill="#3f9a64"/>
+  <path d="M30 178c-14-20-26-24-34-20 4 14 16 22 34 22z" fill="#4caf73"/>
+  <rect x="14" y="170" width="40" height="22" rx="5" fill="#fbf7ef"/>
+  <!-- percent tag -->
+  <circle cx="200" cy="52" r="22" fill="#fff"/>
+  <text x="200" y="61" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#2f8f5b">7%</text>
+</svg>

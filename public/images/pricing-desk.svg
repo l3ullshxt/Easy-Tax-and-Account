@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 520" role="img" aria-labelledby="t">
+  <title id="t">โต๊ะทำงานพร้อมแล็ปท็อปแสดงรายงานบัญชี (placeholder)</title>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7f1e4"/>
+      <stop offset="1" stop-color="#efe5d1"/>
+    </linearGradient>
+    <linearGradient id="win" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e3f1e7"/>
+    </linearGradient>
+    <linearGradient id="table" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9c29b"/>
+      <stop offset="1" stop-color="#c7ab7f"/>
+    </linearGradient>
+  </defs>
+  <rect width="340" height="520" fill="url(#wall)"/>
+  <!-- window -->
+  <rect x="150" y="40" width="160" height="220" rx="14" fill="url(#win)" stroke="#e4d8c1" stroke-width="6"/>
+  <path d="M230 40v220M150 150h160" stroke="#e4d8c1" stroke-width="5"/>
+  <path d="M170 70l30-20M176 96l54-38M186 124l60-44" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+  <!-- light beam -->
+  <path d="M150 260 40 400h260l10-140z" fill="#fff" opacity=".35"/>
+  <!-- plant -->
+  <path d="M60 300c-26-24-46-26-58-20 8 22 30 36 58 34z" fill="#3f9a64"/>
+  <path d="M60 310c4-46 28-70 54-74 0 34-20 64-54 74z" fill="#2f8453"/>
+  <path d="M62 314c-14-44-8-86 14-106 14 34 8 76-14 106z" fill="#4caf73"/>
+  <path d="M60 196c-10-18-26-24-40-22 4 18 22 30 40 28z" fill="#5fbf85" opacity=".9"/>
+  <rect x="26" y="306" width="72" height="14" rx="7" fill="#e9dfcb"/>
+  <path d="M32 316h60l-8 70H40z" fill="#fbf7ef"/>
+  <!-- table -->
+  <rect x="0" y="384" width="340" height="136" fill="url(#table)"/>
+  <rect x="0" y="378" width="340" height="12" fill="#e6d3b1"/>
+  <!-- laptop -->
+  <g transform="rotate(-8 210 340)">
+    <rect x="120" y="248" width="170" height="116" rx="10" fill="#2d3436"/>
+    <rect x="128" y="256" width="154" height="100" rx="5" fill="#f7faf8"/>
+    <rect x="138" y="266" width="60" height="8" rx="4" fill="#1a643d"/>
+    <rect x="138" y="280" width="36" height="5" rx="2.5" fill="#c2e3cd"/>
+    <path d="M140 342l26-20 22 10 30-28 22 12 30-22" stroke="#2f8f5b" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="270" cy="294" r="5" fill="#f5c93a"/>
+    <rect x="232" y="266" width="40" height="18" rx="5" fill="#fff1c2"/>
+    <path d="M104 364h202l-12 16H116z" fill="#b8c0c4"/>
+  </g>
+  <!-- mug -->
+  <path d="M60 368c-6-8 6-12 0-22M74 368c-6-8 6-12 0-22" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none" opacity=".9"/>
+  <path d="M90 386c16 0 16 26 0 26" stroke="#1f7a47" stroke-width="7" fill="none"/>
+  <path d="M44 374h48v38a10 10 0 0 1-10 10H54a10 10 0 0 1-10-10z" fill="#1f7a47"/>
+  <text x="68" y="404" text-anchor="middle" font-family="'Brush Script MT','Segoe Script',cursive" font-size="16" font-weight="700" fill="#fff">Easy</text>
+  <!-- notebook & pen -->
+  <g transform="rotate(10 250 450)">
+    <rect x="190" y="420" width="120" height="70" rx="6" fill="#fff"/>
+    <path d="M204 440h80M204 454h92M204 468h60" stroke="#dfe7e1" stroke-width="4" stroke-linecap="round"/>
+    <rect x="200" y="486" width="100" height="6" rx="3" fill="#f5c93a"/>
+  </g>
+</svg>

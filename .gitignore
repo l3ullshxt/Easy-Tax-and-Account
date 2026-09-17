@@ -1,0 +1,12 @@
+node_modules
+dist
+*.local
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+
+# Local editor / assistant config
+.claude/
+
+# Design reference (not part of the site)
+S__29933570.jpg
