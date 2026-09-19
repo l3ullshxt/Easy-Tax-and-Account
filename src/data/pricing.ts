@@ -21,7 +21,7 @@ export const pricingPlans: PricingPlan[] = [
     name: 'BUSINESS',
     tagline: 'เหมาะกับ SME',
     pricePrefix: 'เริ่มต้น',
-    price: '5,000.-',
+    price: '4,500.-',
     unit: '/ เดือน',
     priceNote: 'ปรับตามจำนวนเอกสารและลักษณะธุรกิจ',
     features: ['ทำบัญชีรายเดือน', 'ยื่นภาษีครบ', 'ปิดงบการเงิน', 'ให้คำปรึกษา', 'วางแผนภาษี'],
