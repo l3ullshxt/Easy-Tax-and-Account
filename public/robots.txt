@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://easy-tax-and-account.vercel.app/sitemap.xml
+Sitemap: https://easytaxandaccount.com/sitemap.xml
