@@ -81,13 +81,37 @@ function getSheet_() {
   let sheet = spreadsheet.getSheetByName(SHEET_NAME);
   if (!sheet) {
     sheet = spreadsheet.insertSheet(SHEET_NAME);
-    sheet.getRange(1, 1, 1, COLUMNS.length)
-      .setValues([COLUMNS.map(function (col) { return col[0]; })])
-      .setFontWeight('bold')
-      .setBackground('#e1f1e6');
+    writeHeaders_(sheet);
     sheet.setFrozenRows(1);
+  } else {
+    // ชีตที่สร้างไว้ก่อนจะมีการเพิ่ม/ย้ายคอลัมน์ จะมีหัวคอลัมน์ชุดเก่าค้างอยู่
+    // ทำให้ข้อมูลแถวใหม่เลื่อนไม่ตรงหัว — เขียนหัวคอลัมน์ใหม่ให้ตรงกับ COLUMNS เสมอ
+    // (ถ้าตั้งใจเปลี่ยนชื่อหัวคอลัมน์เอง ให้แก้ที่ COLUMNS แทน ไม่งั้นจะถูกเขียนทับ)
+    const current = sheet.getRange(1, 1, 1, COLUMNS.length).getValues()[0];
+    const expected = COLUMNS.map(function (col) { return col[0]; });
+    const matched = expected.every(function (label, i) { return current[i] === label; });
+    if (!matched) writeHeaders_(sheet);
   }
   return sheet;
+}
+
+function writeHeaders_(sheet) {
+  sheet.getRange(1, 1, 1, COLUMNS.length)
+    .setValues([COLUMNS.map(function (col) { return col[0]; })])
+    .setFontWeight('bold')
+    .setBackground('#e1f1e6');
+}
+
+/**
+ * ซ่อมหัวคอลัมน์ให้ตรงกับ COLUMNS ทันที โดยไม่ต้องรอให้มีคนกรอกฟอร์ม
+ * วิธีใช้: เลือกฟังก์ชัน "setupHeaders" ในแถบด้านบนของ Apps Script แล้วกด Run
+ * หมายเหตุ: ซ่อมเฉพาะ "หัวคอลัมน์" เท่านั้น ไม่ได้ย้ายข้อมูลแถวเก่าที่บันทึกด้วยชุดคอลัมน์เดิม
+ */
+function setupHeaders() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
+  if (!sheet) throw new Error('ยังไม่มีแท็บ ' + SHEET_NAME);
+  writeHeaders_(sheet);
+  sheet.setFrozenRows(1);
 }
 
 /** ตัดช่องว่าง จำกัดความยาว และกันการแทรกสูตร (=, +, -, @) ลงในชีต */
