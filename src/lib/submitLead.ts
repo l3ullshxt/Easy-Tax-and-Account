@@ -23,6 +23,7 @@ function toPayload(values: LeadFormValues, meta: SubmitMeta) {
     name: values.name.trim(),
     businessName: values.businessName.trim(),
     phone: values.phone.trim(),
+    email: values.email.trim(),
     lineId: values.lineId.trim(),
     businessType: values.businessType,
     documentVolume: values.documentVolume,

@@ -21,6 +21,7 @@ const COLUMNS = [
   ['ชื่อ', 'name'],
   ['ชื่อธุรกิจ', 'businessName'],
   ['เบอร์โทร', 'phone'],
+  ['อีเมล', 'email'],
   ['LINE ID', 'lineId'],
   ['ประเภทธุรกิจ', 'businessType'],
   ['จำนวนเอกสารต่อเดือน', 'documentVolume'],

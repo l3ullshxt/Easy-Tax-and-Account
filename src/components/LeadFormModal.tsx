@@ -7,19 +7,26 @@ import { pricingPlans } from '../data/pricing';
 import { services } from '../data/services';
 import { cn } from '../lib/cn';
 import { submitLead } from '../lib/submitLead';
-import type { LeadFormValues } from '../types';
+import type { LeadFormValues, LeadMode } from '../types';
 import { Button, ButtonLink } from './ui/Button';
 import { Modal } from './ui/Modal';
 import { LineIcon } from './ui/SocialIcons';
 
 type Errors = Partial<Record<keyof LeadFormValues, string>>;
 
-function validate(values: LeadFormValues): Errors {
+function validate(values: LeadFormValues, mode: LeadMode): Errors {
   const errors: Errors = {};
   if (!values.name.trim()) errors.name = 'กรุณากรอกชื่อ';
   const phone = values.phone.replace(/[\s-]/g, '');
   if (!phone) errors.phone = 'กรุณากรอกเบอร์โทร';
   else if (!/^(\+66|0)\d{8,9}$/.test(phone)) errors.phone = 'รูปแบบเบอร์โทรไม่ถูกต้อง เช่น 081-234-5678';
+  // โหมดขอใบเสนอราคาต้องมีอีเมล เพราะใช้ส่งใบเสนอราคากลับไปให้ลูกค้า
+  const email = values.email.trim();
+  if (!email) {
+    if (mode !== 'consult') errors.email = 'กรุณากรอกอีเมลสำหรับรับใบเสนอราคา';
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+    errors.email = 'รูปแบบอีเมลไม่ถูกต้อง เช่น name@email.com';
+  }
   if (!values.businessType) errors.businessType = 'กรุณาเลือกประเภทธุรกิจ';
   return errors;
 }
@@ -44,6 +51,7 @@ function LeadForm() {
     name: '',
     businessName: '',
     phone: '',
+    email: '',
     lineId: '',
     businessType: '',
     documentVolume: '',
@@ -61,6 +69,7 @@ function LeadForm() {
       name: `${uid}-name`,
       businessName: `${uid}-business-name`,
       phone: `${uid}-phone`,
+      email: `${uid}-email`,
       lineId: `${uid}-line`,
       businessType: `${uid}-business-type`,
       documentVolume: `${uid}-docs`,
@@ -87,7 +96,7 @@ function LeadForm() {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const nextErrors = validate(values);
+    const nextErrors = validate(values, mode);
     setErrors(nextErrors);
     const firstError = Object.keys(nextErrors)[0] as keyof typeof ids | undefined;
     if (firstError) {
@@ -128,15 +137,18 @@ function LeadForm() {
     );
   }
 
-  const inputProps = (field: keyof typeof ids & keyof LeadFormValues) => ({
-    id: ids[field],
-    name: field,
-    value: values[field] as string,
-    onChange: handleChange,
-    'aria-invalid': errors[field] ? true : undefined,
-    'aria-describedby': errors[field] ? `${ids[field]}-error` : undefined,
-    className: 'field-input',
-  });
+  const inputProps = (field: keyof typeof ids & keyof LeadFormValues, describedBy?: string) => {
+    const describedByIds = [describedBy, errors[field] ? `${ids[field]}-error` : null].filter(Boolean);
+    return {
+      id: ids[field],
+      name: field,
+      value: values[field] as string,
+      onChange: handleChange,
+      'aria-invalid': errors[field] ? true : undefined,
+      'aria-describedby': describedByIds.length ? describedByIds.join(' ') : undefined,
+      className: 'field-input',
+    };
+  };
 
   return (
     <div>
@@ -206,6 +218,29 @@ function LeadForm() {
               LINE ID
             </label>
             <input {...inputProps('lineId')} type="text" autoComplete="off" placeholder="เช่น @yourshop" />
+          </div>
+
+          <div className="sm:col-span-2">
+            <label htmlFor={ids.email} className="field-label">
+              อีเมล{' '}
+              {isConsult ? null : (
+                <span className="text-orange-700" aria-hidden="true">
+                  *
+                </span>
+              )}
+            </label>
+            <input
+              {...inputProps('email', `${ids.email}-hint`)}
+              type="email"
+              inputMode="email"
+              autoComplete="email"
+              required={!isConsult}
+              placeholder="name@email.com"
+            />
+            <p id={`${ids.email}-hint`} className="mt-1.5 text-sm text-ink-muted">
+              {isConsult ? 'ใส่ไว้เผื่อเราต้องส่งเอกสารหรือใบเสนอราคากลับไปให้' : 'เราจะส่งใบเสนอราคากลับไปที่อีเมลนี้'}
+            </p>
+            <FieldError id={`${ids.email}-error`} message={errors.email} />
           </div>
 
           <div>

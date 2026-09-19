@@ -65,6 +65,7 @@ export interface LeadFormValues {
   name: string;
   businessName: string;
   phone: string;
+  email: string;
   lineId: string;
   businessType: string;
   documentVolume: string;
