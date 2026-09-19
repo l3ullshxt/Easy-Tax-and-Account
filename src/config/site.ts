@@ -38,6 +38,7 @@ export const siteConfig = {
     facebookUrl: 'https://www.facebook.com/share/1Dq3sYN951/',
     tiktokName: 'Easy Tax and Account',
     tiktokUrl: 'https://www.tiktok.com/@easytaxandacc',
+    address: '353/23 ซอยจรัญสนิทวงศ์ 32 แขวงศิริราช เขตบางกอกน้อย กรุงเทพมหานคร 10700',
     serviceArea: 'ดูแลลูกค้าออนไลน์ทั่วประเทศ',
     officeHours: 'จันทร์–ศุกร์ 09:00–18:00 น.',
   },

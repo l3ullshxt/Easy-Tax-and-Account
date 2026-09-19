@@ -1,4 +1,4 @@
-import { ArrowUp, Clock, Mail, Phone } from 'lucide-react';
+import { ArrowUp, Clock, Mail, MapPin, Phone } from 'lucide-react';
 import { siteConfig } from '../config/site';
 import { footerAudienceLinks, footerServiceLinks } from '../data/footer';
 import { Logo } from './ui/Logo';
@@ -106,6 +106,10 @@ export function Footer() {
             <p className="inline-flex items-center gap-2 text-[0.9375rem] text-brand-100/70">
               <Clock className="size-5" aria-hidden="true" />
               {contact.officeHours}
+            </p>
+            <p className="flex items-start gap-2 text-[0.9375rem] leading-relaxed text-brand-100/70 sm:col-span-2 lg:col-span-1">
+              <MapPin className="mt-0.5 size-5 shrink-0" aria-hidden="true" />
+              {contact.address}
             </p>
           </address>
         </div>
