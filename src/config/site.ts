@@ -30,7 +30,7 @@ export const siteConfig = {
 
   contact: {
     lineUrl: 'https://lin.ee/wkl0qUa',
-    lineId: '@557oijoq',
+    lineId: '@easytax.acc',
     phoneDisplay: '096-287-9968',
     phoneHref: 'tel:+66962879968',
     email: 'easytaxandacc@gmail.com',
