@@ -5,6 +5,7 @@ import { useLeadForm } from '../context/LeadFormContext';
 import { businessTypeOptions, documentVolumeOptions, vatStatusOptions } from '../data/leadForm';
 import { pricingPlans } from '../data/pricing';
 import { services } from '../data/services';
+import { trackEvent } from '../lib/analytics';
 import { cn } from '../lib/cn';
 import { submitLead } from '../lib/submitLead';
 import type { LeadFormValues, LeadMode } from '../types';
@@ -107,6 +108,12 @@ function LeadForm() {
     setStatus('submitting');
     try {
       await submitLead(values, { mode, honeypot });
+      // generate_lead เป็นชื่อ event มาตรฐานของ GA4 — ตั้งเป็น Conversion ได้ในหน้า GA4
+      trackEvent('generate_lead', {
+        lead_type: isConsult ? 'consult' : 'quote',
+        plan: values.plan || 'none',
+        business_type: values.businessType,
+      });
       setStatus('success');
     } catch {
       setStatus('error');

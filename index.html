@@ -41,6 +41,20 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+    <!-- Google Analytics 4 — เปลี่ยนรหัสได้ที่ gtag('config', ...) ด้านล่าง -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-34S4SEF7FM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      // ไม่เก็บสถิติตอนพัฒนาในเครื่อง เพื่อไม่ให้ตัวเลขผู้เข้าชมเพี้ยน
+      if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+        gtag('config', 'G-34S4SEF7FM');
+      }
+    </script>
+
     <!-- Fonts: Anuphan (หลัก), Caveat (ตัวเขียน Easy), Mali (ลายมือภาษาไทย) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
