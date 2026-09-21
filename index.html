@@ -38,8 +38,12 @@
     <meta property="og:image:alt" content="Easy Tax & Account — บัญชีไม่ยาก ถ้ามี Easy อยู่ข้าง ๆ" />
     <meta name="twitter:card" content="summary_large_image" />
 
+    <!-- Favicon: Google Search ใช้ไอคอนเหล่านี้แสดงหน้าผลค้นหา (ขนาดต้องเป็นทวีคูณของ 48px) -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Google Analytics 4 — เปลี่ยนรหัสได้ที่ gtag('config', ...) ด้านล่าง -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-34S4SEF7FM"></script>
@@ -63,6 +67,17 @@
       rel="stylesheet"
     />
 
+    <!-- ชื่อเว็บไซต์ที่ Google ใช้แสดงเหนือผลค้นหา (แทนการแสดงชื่อโดเมน) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Easy Tax & Account",
+        "alternateName": "Easy Tax and Account",
+        "url": "https://easytaxandaccount.com/"
+      }
+    </script>
+
     <!-- Structured data (AccountingService) สำหรับ Google -->
     <script type="application/ld+json">
       {
@@ -72,7 +87,7 @@
         "description": "สำนักงานบัญชีสำหรับ SME และธุรกิจออนไลน์ รับทำบัญชีรายเดือน ยื่นภาษี ปิดงบ จดบริษัท และให้คำปรึกษาด้านบัญชี",
         "url": "https://easytaxandaccount.com/",
         "image": "https://easytaxandaccount.com/images/og-image.png",
-        "logo": "https://easytaxandaccount.com/apple-touch-icon.png",
+        "logo": "https://easytaxandaccount.com/favicon-512.png",
         "areaServed": "TH",
         "priceRange": "฿฿",
         "email": "easytaxandacc@gmail.com",
