@@ -4,39 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-    <!-- ===== SEO ===== -->
-    <title>Easy Tax &amp; Account | สำนักงานบัญชีสำหรับ SME และธุรกิจออนไลน์</title>
-    <meta
-      name="description"
-      content="Easy Tax & Account สำนักงานบัญชีสำหรับ SME และธุรกิจออนไลน์ รับทำบัญชีรายเดือน ยื่นภาษี ปิดงบ จดบริษัท และให้คำปรึกษาด้านบัญชี"
-    />
-    <meta
-      name="keywords"
-      content="สำนักงานบัญชี, รับทำบัญชี, รับทำบัญชีรายเดือน, สำนักงานบัญชี SME, รับทำบัญชีออนไลน์, ยื่นภาษี, ปิดงบ, จดบริษัท, บัญชี TikTok Shop, บัญชี E-Commerce"
-    />
     <meta name="author" content="Easy Tax & Account" />
-    <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#1a643d" />
-    <!-- URL หลักของเว็บ — ถ้าเปลี่ยนโดเมน ให้แก้ทุกจุดที่มี easytaxandaccount.com (ดู README) -->
-    <link rel="canonical" href="https://easytaxandaccount.com/" />
     <!-- Google Search Console: ใส่รหัสยืนยันความเป็นเจ้าของเว็บที่นี่ -->
     <!-- <meta name="google-site-verification" content="YOUR_CODE" /> -->
 
-    <!-- Open Graph / Social share -->
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="th_TH" />
-    <meta property="og:site_name" content="Easy Tax & Account" />
-    <meta property="og:title" content="Easy Tax & Account | สำนักงานบัญชีสำหรับ SME และธุรกิจออนไลน์" />
-    <meta
-      property="og:description"
-      content="รับทำบัญชีรายเดือน ยื่นภาษี ปิดงบ จดบริษัท และให้คำปรึกษาด้านบัญชี ดูแลแบบเข้าใจง่ายสำหรับ SME และธุรกิจออนไลน์"
-    />
-    <meta property="og:url" content="https://easytaxandaccount.com/" />
-    <meta property="og:image" content="https://easytaxandaccount.com/images/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Easy Tax & Account — บัญชีไม่ยาก ถ้ามี Easy อยู่ข้าง ๆ" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <!-- ===== SEO ของแต่ละหน้า =====
+      ส่วนระหว่าง seo:start / seo:end ถูกสร้างใหม่ตอน build ตามแต่ละหน้า (แก้ข้อความได้ที่ src/seo.ts)
+      แท็กด้านล่างนี้ใช้เฉพาะตอน npm run dev เท่านั้น -->
+    <!--seo:start-->
+    <title>Easy Tax &amp; Account | สำนักงานบัญชี SME และธุรกิจออนไลน์ บางกอกน้อย กรุงเทพฯ</title>
+    <meta name="robots" content="noindex" />
+    <!--seo:end-->
 
     <!-- Favicon: Google Search ใช้ไอคอนเหล่านี้แสดงหน้าผลค้นหา (ขนาดต้องเป็นทวีคูณของ 48px) -->
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -88,7 +67,7 @@
         "url": "https://easytaxandaccount.com/",
         "image": "https://easytaxandaccount.com/images/og-image.png",
         "logo": "https://easytaxandaccount.com/favicon-512.png",
-        "areaServed": "TH",
+        "areaServed": ["กรุงเทพมหานคร", "TH"],
         "priceRange": "฿฿",
         "email": "easytaxandacc@gmail.com",
         "telephone": "+66-96-287-9968",
@@ -109,7 +88,7 @@
     </script>
   </head>
   <body>
-    <noscript>กรุณาเปิดใช้งาน JavaScript เพื่อใช้งานเว็บไซต์ Easy Tax &amp; Account</noscript>
+    <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

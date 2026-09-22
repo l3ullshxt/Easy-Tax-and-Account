@@ -11,6 +11,11 @@ export const siteConfig = {
   tagline: 'บัญชีไม่ยาก ถ้ามี Easy อยู่ข้าง ๆ',
   description: 'สำนักงานบัญชีสำหรับ SME และธุรกิจออนไลน์',
 
+  /** URL หลักของเว็บ (ไม่มี / ท้าย) — ใช้สร้าง canonical, sitemap และ Open Graph ทุกหน้า */
+  url: 'https://easytaxandaccount.com',
+  /** พื้นที่ตั้งสำนักงาน (ใช้ใน SEO และข้อความบนเว็บ) */
+  location: 'บางกอกน้อย กรุงเทพฯ',
+
   /**
    * โลโก้: ถ้าใส่ path ของไฟล์ (เช่น '/images/logo.svg' หรือ '/images/logo.png')
    * เว็บจะใช้รูปนั้นแทนโลโก้แบบตัวอักษรใน src/components/ui/Logo.tsx

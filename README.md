@@ -21,7 +21,7 @@ npm run preview    # ดูผล build
 index.html                 SEO: title, meta, Open Graph, JSON-LD
 public/
   favicon.svg
-  robots.txt, sitemap.xml
+  robots.txt              (sitemap.xml สร้างอัตโนมัติตอน build)
   images/
     characters/            รูปพี่ Easy + น้อง Bee (placeholder SVG)
     articles/              รูปประกอบบทความ
@@ -51,8 +51,8 @@ src/
 | **ราคา / แพ็กเกจ** | `src/data/pricing.ts` (ราคา, รายการ, หมายเหตุราคา) |
 | **LINE** | `contact.lineUrl` ใน `src/config/site.ts` (ตอนนี้ `https://lin.ee/wkl0qUa`) — ใช้กับปุ่มลอย, CTA, เมนูมือถือ, footer, ฟอร์ม |
 | **Form backend** | Google Sheets — ดูหัวข้อ "เชื่อมฟอร์มกับ Google Sheets" ด้านล่าง (โค้ดส่งข้อมูลอยู่ที่ `src/lib/submitLead.ts`) |
-| **โดเมน / SEO** | ตอนนี้ใช้ `https://easytaxandaccount.com` — ถ้าเปลี่ยนโดเมน ให้ค้นหาคำนี้แล้วแก้ใน `index.html` (canonical, og:url, og:image, JSON-LD), `public/robots.txt`, `public/sitemap.xml` |
-| **บริการ / บทความ** | `src/data/services.ts`, `src/data/articles.ts` (`featured: true` = แสดงตั้งแต่แรก) |
+| **โดเมน / SEO** | `url` ใน `src/config/site.ts` (ใช้สร้าง canonical / Open Graph / sitemap ทุกหน้า) + JSON-LD ใน `index.html` และ `public/robots.txt` — title / description ของแต่ละหน้าแก้ที่ `src/seo.ts` |
+| **บริการ / บทความ** | `src/data/services.ts`, `src/data/articles.ts` (บทความ `featured: true` = แสดงในหน้าแรก) |
 
 ## พฤติกรรมของปุ่มหลัก
 
@@ -60,7 +60,7 @@ src/
 - **ปรึกษาฟรี** → เปิดฟอร์มโหมดปรึกษา (มีลิงก์ทัก LINE ด้านบนฟอร์ม)
 - **แอด LINE / ปุ่ม LINE ลอย** → เปิด LINE ในแท็บใหม่
 - **ดูบริการทั้งหมด / ดูบทความทั้งหมด** → แสดงรายการเพิ่มเติม
-- **อ่านต่อ** → เปิดบทความใน dialog (เปลี่ยนเป็นหน้าบทความจริงได้เมื่อมี CMS)
+- **อ่านต่อ** → เปิดหน้าบทความ `/articles/<id>/`
 
 ## เชื่อมฟอร์มกับ Google Sheets
 
@@ -86,3 +86,12 @@ src/
 - ถ้าเพิ่ม/ย้ายคอลัมน์ใน `COLUMNS` สคริปต์จะเขียนหัวคอลัมน์ในชีตให้ตรงเองตอนมีคนกรอกฟอร์มครั้งถัดไป — ถ้าอยากซ่อมทันที เลือกฟังก์ชัน `setupHeaders` ใน Apps Script แล้วกด **Run** (ซ่อมเฉพาะหัวคอลัมน์ ไม่ย้ายข้อมูลแถวเก่า)
 - ถ้ายังไม่ตั้งค่า URL: ตอน `npm run dev` ฟอร์มจะจำลองการส่ง (ข้อมูลไม่ถูกบันทึก) ส่วนเว็บที่ build แล้วจะแสดงข้อความ "ส่งข้อมูลไม่สำเร็จ" เพื่อไม่ให้ข้อมูลลูกค้าหายโดยไม่มีใครรู้
 - มีช่อง honeypot กันสแปมบอทพื้นฐาน และกันการแทรกสูตรลงชีต
+
+## หน้าบทความ และการ pre-render (SEO)
+
+- ทุกบทความใน `src/data/articles.ts` จะได้หน้าเว็บของตัวเองที่ `/articles/<id>/` และมีหน้ารวม `/articles/`
+- `npm run build` จะ render ทุกหน้าเป็นไฟล์ HTML จริง (`scripts/prerender.mjs`) พร้อม title, description, canonical, Open Graph และ structured data (Article + Breadcrumb) ของแต่ละหน้า และสร้าง `sitemap.xml` ให้อัตโนมัติ
+- **เพิ่มบทความใหม่:** คัดลอกบทความ 1 ก้อนใน `src/data/articles.ts` → แก้ `id` (ภาษาอังกฤษ ใช้เป็น URL), ชื่อ, คำโปรย, เนื้อหา, วันที่ → push ขึ้น GitHub แล้วเว็บจะสร้างหน้าใหม่ให้เอง
+- เนื้อหาบทความ (`content`): ข้อความธรรมดา = ย่อหน้า, `{ heading: '...' }` = หัวข้อย่อย, `{ list: ['...', '...'] }` = รายการ bullet
+- บทความที่ยาวและละเอียด (800 คำขึ้นไป) มีหัวข้อย่อยชัดเจน มีโอกาสติดอันดับ Google มากกว่า
+- Hosting ต้องใช้คำสั่ง build เป็น `npm run build` และ output เป็น `dist` (ค่าเริ่มต้นของ Vercel / Netlify สำหรับ Vite)

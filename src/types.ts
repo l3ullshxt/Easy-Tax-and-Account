@@ -47,16 +47,30 @@ export interface Feature {
   icon: LucideIcon;
 }
 
+/**
+ * เนื้อหาบทความ 1 ส่วน
+ * - ข้อความธรรมดา = 1 ย่อหน้า
+ * - { heading } = หัวข้อย่อย (h2)
+ * - { list } = รายการแบบ bullet
+ */
+export type ArticleBlock = string | { heading: string } | { list: string[] };
+
 export interface Article {
+  /** ใช้เป็น URL ของบทความ: /articles/<id>/ (ภาษาอังกฤษตัวเล็ก คั่นด้วย -) */
   id: string;
   title: string;
   category: string;
   readingMinutes: number;
   image: string;
   imageAlt: string;
+  /** คำโปรย — ใช้ในการ์ดบทความ และเป็น meta description ของหน้าบทความ */
   excerpt: string;
-  content: string[];
+  content: ArticleBlock[];
+  /** แสดงในหน้าแรก */
   featured: boolean;
+  /** วันที่เผยแพร่ / แก้ไขล่าสุด (YYYY-MM-DD) */
+  publishedAt: string;
+  updatedAt: string;
 }
 
 export type LeadMode = 'quote' | 'consult';

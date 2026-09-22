@@ -10,12 +10,13 @@ import { LineIcon } from './ui/SocialIcons';
 interface MobileMenuProps {
   open: boolean;
   activeId: string;
+  isHome: boolean;
   onClose: (restoreFocus?: boolean) => void;
   onConsult: () => void;
   onQuote: () => void;
 }
 
-export function MobileMenu({ open, activeId, onClose, onConsult, onQuote }: MobileMenuProps) {
+export function MobileMenu({ open, activeId, isHome, onClose, onConsult, onQuote }: MobileMenuProps) {
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -83,8 +84,10 @@ export function MobileMenu({ open, activeId, onClose, onConsult, onQuote }: Mobi
                       <a
                         href={item.href}
                         onClick={(event) => {
-                          event.preventDefault();
                           onClose();
+                          // หน้าอื่น: ปล่อยให้ลิงก์พากลับไปหน้าแรกตามปกติ
+                          if (!isHome) return;
+                          event.preventDefault();
                           scrollToHash(item.href);
                         }}
                         aria-current={isActive ? 'true' : undefined}

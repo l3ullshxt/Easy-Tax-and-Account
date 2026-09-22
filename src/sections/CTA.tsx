@@ -1,4 +1,4 @@
-import { MessageCircle } from 'lucide-react';
+import { MapPin, MessageCircle } from 'lucide-react';
 import { siteConfig } from '../config/site';
 import { useLeadForm } from '../context/LeadFormContext';
 import { Button, ButtonLink } from '../components/ui/Button';
@@ -42,6 +42,10 @@ export function CTA() {
                   <span className="inline-block">แล้วไปโฟกัสกับธุรกิจของคุณกัน</span>
                 </h2>
                 <p className="mt-3 text-base text-brand-100 sm:text-lg">ปรึกษาสำนักงานบัญชี Easy Tax &amp; Account ได้เลย</p>
+                <p className="mt-3 inline-flex items-center gap-1.5 text-sm text-brand-200">
+                  <MapPin className="size-4 shrink-0" aria-hidden="true" />
+                  สำนักงานย่าน{siteConfig.location} · {siteConfig.contact.serviceArea}
+                </p>
               </div>
 
               <div className="flex flex-col gap-3 sm:flex-row sm:justify-center lg:min-w-[13rem] lg:flex-col">

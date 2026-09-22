@@ -9,12 +9,18 @@ import { scrollToHash } from '../lib/scrollToHash';
 import { Button } from './ui/Button';
 import { Logo } from './ui/Logo';
 import { MobileMenu } from './MobileMenu';
+import type { Route } from '../routes';
 
 const sectionIds = navItems.map((item) => item.id);
 
-export function Navbar() {
+export function Navbar({ route }: { route: Route }) {
+  const isHome = route.kind === 'home';
   const [menuOpen, setMenuOpen] = useState(false);
-  const active = useActiveSection(sectionIds);
+  const spyActive = useActiveSection(sectionIds);
+  // หน้าแรก: ไฮไลต์ตาม section ที่กำลังอ่าน / หน้าบทความ: ไฮไลต์เมนู 'บทความ'
+  const active = isHome ? spyActive : route.kind === 'notFound' ? '' : 'articles';
+  // บนหน้าแรกใช้ #id (เลื่อนในหน้าเดิม) ส่วนหน้าอื่นใช้ /#id (กลับไปหน้าแรกแล้วเลื่อนไปที่ section)
+  const navHref = (href: string) => (isHome ? href.replace(/^\//, '') : href);
   const scrolled = useScrolled();
   const { openLeadForm } = useLeadForm();
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -44,8 +50,8 @@ export function Navbar() {
       )}
     >
       <div className="container-page flex h-[4.25rem] items-center justify-between gap-4 lg:h-[4.5rem]">
-        <a href="#home" className="shrink-0 rounded-lg" aria-label="Easy Tax & Account — กลับไปหน้าหลัก" onClick={(event) => {
-            if (!menuOpen) return;
+        <a href="/" className="shrink-0 rounded-lg" aria-label="Easy Tax & Account — กลับไปหน้าหลัก" onClick={(event) => {
+            if (!isHome) return;
             event.preventDefault();
             closeMenu();
             scrollToHash('#home');
@@ -61,7 +67,7 @@ export function Navbar() {
               return (
                 <li key={item.id}>
                   <a
-                    href={item.href}
+                    href={navHref(item.href)}
                     aria-current={isActive ? 'true' : undefined}
                     className={cn(
                       'relative block rounded-full px-4 py-2 text-[0.9375rem] font-medium transition-colors duration-200',
@@ -104,6 +110,7 @@ export function Navbar() {
       <MobileMenu
         open={menuOpen}
         activeId={active}
+        isHome={isHome}
         onClose={closeMenu}
         onConsult={() => {
           closeMenu();

@@ -30,7 +30,7 @@ export function Footer() {
     <footer className="on-dark bg-brand-950 text-brand-100">
       <div className="container-page grid grid-cols-2 gap-x-6 gap-y-10 py-14 lg:grid-cols-[1.5fr_1fr_1fr_1.3fr] lg:gap-10 lg:py-20">
         <div className="col-span-2 lg:col-span-1">
-          <a href="#home" className="inline-block rounded-lg" aria-label="Easy Tax & Account — กลับไปหน้าหลัก">
+          <a href="/" className="inline-block rounded-lg" aria-label="Easy Tax & Account — กลับไปหน้าหลัก">
             <Logo tone="light" />
           </a>
           <p className="mt-4 max-w-xs text-[0.9375rem] leading-relaxed text-brand-100/85">{siteConfig.description}</p>
@@ -120,10 +120,15 @@ export function Footer() {
           <p>
             © {year} {siteConfig.name}. สงวนลิขสิทธิ์ · {contact.serviceArea}
           </p>
-          <a href="#home" className="inline-flex items-center gap-1.5 self-start rounded transition-colors duration-200 hover:text-white">
-            กลับขึ้นด้านบน
-            <ArrowUp className="size-4" aria-hidden="true" />
-          </a>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <a href="/articles/" className="rounded transition-colors duration-200 hover:text-white">
+              บทความ
+            </a>
+            <a href="#main" className="inline-flex items-center gap-1.5 rounded transition-colors duration-200 hover:text-white">
+              กลับขึ้นด้านบน
+              <ArrowUp className="size-4" aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
