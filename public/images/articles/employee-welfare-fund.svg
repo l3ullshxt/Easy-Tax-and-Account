@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="t">
+  <title id="t">ปฏิทิน 1 ตุลาคม กระปุกออมเงินกองทุน และเหรียญ (placeholder)</title>
+  <rect width="400" height="250" fill="#eaf5ee"/>
+  <circle cx="330" cy="50" r="86" fill="#f6fbf7"/>
+  <rect y="196" width="400" height="54" fill="#dcebe1"/>
+  <rect y="192" width="400" height="8" fill="#e8f3ec"/>
+
+  <!-- calendar -->
+  <g transform="rotate(-5 110 120)">
+    <rect x="42" y="56" width="136" height="140" rx="14" fill="#fff"/>
+    <path d="M42 70a14 14 0 0 1 14-14h108a14 14 0 0 1 14 14v22H42z" fill="#1a643d"/>
+    <rect x="70" y="44" width="8" height="24" rx="4" fill="#10402a"/>
+    <rect x="142" y="44" width="8" height="24" rx="4" fill="#10402a"/>
+    <text x="110" y="142" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="44" font-weight="700" fill="#10402a">1</text>
+    <text x="110" y="170" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#2f8f5b">OCT 2026</text>
+  </g>
+
+  <!-- fund jar -->
+  <path d="M232 104h94v64a26 26 0 0 1-26 26h-42a26 26 0 0 1-26-26z" fill="#2f8f5b"/>
+  <path d="M232 104h94v20h-94z" fill="#247a4a"/>
+  <rect x="224" y="90" width="110" height="18" rx="9" fill="#1a643d"/>
+  <rect x="262" y="74" width="34" height="18" rx="6" fill="#155033"/>
+  <text x="279" y="164" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#e8f5ec">฿</text>
+
+  <!-- coins dropping -->
+  <g>
+    <ellipse cx="300" cy="46" rx="21" ry="7" fill="#e2b014"/>
+    <rect x="279" y="32" width="42" height="14" fill="#f5c93a"/>
+    <ellipse cx="300" cy="32" rx="21" ry="7" fill="#fbd86a"/>
+    <ellipse cx="348" cy="126" rx="17" ry="6" fill="#e2b014"/>
+    <rect x="331" y="114" width="34" height="12" fill="#f5c93a"/>
+    <ellipse cx="348" cy="114" rx="17" ry="6" fill="#fde58f"/>
+  </g>
+
+  <!-- percent badge -->
+  <circle cx="196" cy="62" r="30" fill="#fff" stroke="#c2e3cd" stroke-width="3"/>
+  <text x="196" y="70" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#217a4b">0.25%</text>
+
+  <!-- leaf -->
+  <path d="M28 192c-4-30 6-50 24-58 2 24-8 46-24 58z" fill="#4caf73"/>
+  <path d="M24 192c-14-16-26-18-34-14 6 12 18 18 34 16z" fill="#3f9a64"/>
+</svg>

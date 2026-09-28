@@ -6,7 +6,8 @@ import { buttonClasses } from '../components/ui/Button';
 import { Reveal } from '../components/ui/Reveal';
 import { SectionHeading } from '../components/ui/SectionHeading';
 
-const featuredArticles = articles.filter((article) => article.featured);
+// หน้าแรกแสดง 3 บทความล่าสุดที่ตั้ง featured ไว้ (ที่เหลือดูได้ที่หน้ารวมบทความ)
+const featuredArticles = articles.filter((article) => article.featured).slice(0, 3);
 
 function AllArticlesLink({ className }: { className?: string }) {
   return (
