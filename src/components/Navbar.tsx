@@ -17,8 +17,17 @@ export function Navbar({ route }: { route: Route }) {
   const isHome = route.kind === 'home';
   const [menuOpen, setMenuOpen] = useState(false);
   const spyActive = useActiveSection(sectionIds);
-  // หน้าแรก: ไฮไลต์ตาม section ที่กำลังอ่าน / หน้าบทความ: ไฮไลต์เมนู 'บทความ'
-  const active = isHome ? spyActive : route.kind === 'notFound' ? '' : 'articles';
+  // หน้าแรก: ไฮไลต์ตาม section ที่กำลังอ่าน / หน้าอื่น: ไฮไลต์เมนูของหมวดนั้น
+  const pageMenu: Record<Route['kind'], string> = {
+    home: '',
+    services: 'services',
+    service: 'services',
+    articles: 'articles',
+    article: 'articles',
+    privacy: '',
+    notFound: '',
+  };
+  const active = isHome ? spyActive : pageMenu[route.kind];
   // บนหน้าแรกใช้ #id (เลื่อนในหน้าเดิม) ส่วนหน้าอื่นใช้ /#id (กลับไปหน้าแรกแล้วเลื่อนไปที่ section)
   const navHref = (href: string) => (isHome ? href.replace(/^\//, '') : href);
   const scrolled = useScrolled();

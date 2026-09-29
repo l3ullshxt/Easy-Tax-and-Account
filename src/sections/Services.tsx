@@ -1,17 +1,16 @@
-import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { services } from '../data/services';
 import { useLeadForm } from '../context/LeadFormContext';
-import { Button } from '../components/ui/Button';
+import { SERVICES_PATH } from '../routes';
+import { buttonClasses } from '../components/ui/Button';
 import { Reveal } from '../components/ui/Reveal';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { ServiceCard } from '../components/ServiceCard';
 
+const featuredServices = services.filter((service) => service.featured);
+
 export function Services() {
-  const [showAll, setShowAll] = useState(false);
   const { openLeadForm } = useLeadForm();
-  const visibleServices = showAll ? services : services.filter((service) => service.featured);
-  const hasMore = services.some((service) => !service.featured);
 
   return (
     <section id="services" aria-labelledby="services-title" className="relative bg-cream-100 py-16 sm:py-20 lg:py-24">
@@ -30,9 +29,9 @@ export function Services() {
         </Reveal>
 
         <ul id="services-grid" className="mt-10 grid gap-4 md:grid-cols-2 md:gap-5 lg:mt-14 lg:grid-cols-3 lg:gap-6">
-          {visibleServices.map((service, index) => (
+          {featuredServices.map((service, index) => (
             <li key={service.id}>
-              <Reveal delay={service.featured ? index * 60 : 0} className="h-full">
+              <Reveal delay={index * 60} className="h-full">
                 <ServiceCard
                   service={service}
                   onInquire={(selected) => openLeadForm({ mode: 'quote', serviceId: selected.id })}
@@ -42,24 +41,12 @@ export function Services() {
           ))}
         </ul>
 
-        {hasMore && (
-          <div className="mt-10 flex justify-center lg:mt-12">
-            <Button
-              variant="secondary"
-              size="lg"
-              className="w-full sm:w-auto"
-              aria-expanded={showAll}
-              aria-controls="services-grid"
-              onClick={() => setShowAll((value) => !value)}
-            >
-              {showAll ? 'แสดงเฉพาะบริการหลัก' : 'ดูบริการทั้งหมด'}
-              <ArrowRight
-                aria-hidden="true"
-                className={showAll ? '-rotate-90 transition-transform duration-200' : 'transition-transform duration-200 group-hover/btn:translate-x-1'}
-              />
-            </Button>
-          </div>
-        )}
+        <div className="mt-10 flex justify-center lg:mt-12">
+          <a href={SERVICES_PATH} className={buttonClasses({ variant: 'secondary', size: 'lg' }, 'w-full sm:w-auto')}>
+            ดูบริการทั้งหมด ({services.length} บริการ)
+            <ArrowRight aria-hidden="true" className="transition-transform duration-200 group-hover/btn:translate-x-1" />
+          </a>
+        </div>
       </div>
     </section>
   );

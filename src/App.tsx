@@ -8,6 +8,8 @@ import { ArticlesPage } from './pages/ArticlesPage';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { PrivacyPage } from './pages/PrivacyPage';
+import { ServicePage } from './pages/ServicePage';
+import { ServicesPage } from './pages/ServicesPage';
 import type { Route } from './routes';
 
 // ฟอร์มขอใบเสนอราคาโหลดเฉพาะตอนเปิดใช้งาน เพื่อให้หน้าเว็บโหลดครั้งแรกเบาลง
@@ -37,6 +39,10 @@ function Page({ route }: { route: Route }) {
       return <ArticlesPage />;
     case 'article':
       return <ArticlePage article={route.article} />;
+    case 'services':
+      return <ServicesPage />;
+    case 'service':
+      return <ServicePage service={route.service} />;
     case 'privacy':
       return <PrivacyPage />;
     case 'notFound':

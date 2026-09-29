@@ -16,12 +16,31 @@ export interface BusinessStage {
 }
 
 export interface Service {
+  /** ใช้เป็น URL ของหน้าบริการ: /services/<id>/ */
   id: string;
+  /** ชื่อสั้นในการ์ดหน้าแรก */
   title: string;
+  /** คำอธิบายสั้นในการ์ดหน้าแรก */
   description: string;
   icon: LucideIcon;
   /** แสดงในหน้าแรกตั้งแต่ต้น (ที่เหลือจะแสดงเมื่อกด "ดูบริการทั้งหมด") */
   featured: boolean;
+
+  /* ---------- เนื้อหาหน้าบริการ /services/<id>/ ---------- */
+  /** หัวข้อ h1 ของหน้าบริการ (ใส่คำค้นที่ลูกค้าน่าจะพิมพ์หา) */
+  pageTitle: string;
+  /** คำอธิบายใต้ชื่อเว็บในผลค้นหา Google */
+  metaDescription: string;
+  /** ย่อหน้าเปิดของหน้าบริการ */
+  intro: string[];
+  /** สิ่งที่รวมอยู่ในบริการ */
+  includes: string[];
+  /** เหมาะกับใคร */
+  forWho: string[];
+  /** ขั้นตอนการทำงาน (ถ้ามี) */
+  process?: { step: string; detail: string }[];
+  /** id ของบทความที่เกี่ยวข้อง */
+  relatedArticleIds: string[];
 }
 
 export interface PricingPlan {

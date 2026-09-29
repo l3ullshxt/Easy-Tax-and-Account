@@ -50,10 +50,11 @@ await write('404.html', renderPage('/404'));
 // เตือนถ้าบทความไหนยังไม่มีรูปแชร์ (og) — ลิงก์ที่แชร์ใน LINE / Facebook จะไม่มีรูป
 for (const pathname of entry.getAllPaths()) {
   const route = entry.resolveRoute(pathname);
-  if (route.kind !== 'article') continue;
-  const ogFile = path.join(distDir, 'images', 'og', `${route.article.id}.jpg`);
-  if (!existsSync(ogFile)) {
-    console.warn(`  ⚠ ไม่พบรูปแชร์ public/images/og/${route.article.id}.jpg (ดูวิธีสร้างใน README)`);
+  const ogName =
+    route.kind === 'article' ? `${route.article.id}.jpg` : route.kind === 'service' ? `service-${route.service.id}.jpg` : null;
+  if (!ogName) continue;
+  if (!existsSync(path.join(distDir, 'images', 'og', ogName))) {
+    console.warn(`  ⚠ ไม่พบรูปแชร์ public/images/og/${ogName} (ดูวิธีสร้างใน README)`);
   }
 }
 

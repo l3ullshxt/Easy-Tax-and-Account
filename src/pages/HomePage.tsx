@@ -1,5 +1,6 @@
 import { Articles } from '../sections/Articles';
 import { Faq } from '../sections/Faq';
+import { Testimonials } from '../sections/Testimonials';
 import { BusinessStages } from '../sections/BusinessStages';
 import { CTA } from '../sections/CTA';
 import { Hero } from '../sections/Hero';
@@ -15,6 +16,7 @@ export function HomePage() {
       <Services />
       <Pricing />
       <WhyEasy />
+      <Testimonials />
       <Articles />
       <Faq />
       <CTA />

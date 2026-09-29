@@ -1,6 +1,15 @@
 import { siteConfig } from './config/site';
 import { faqs } from './data/faqs';
-import { ARTICLES_PATH, articlePath, getAllPaths, PRIVACY_PATH, resolveRoute, type Route } from './routes';
+import {
+  ARTICLES_PATH,
+  articlePath,
+  getAllPaths,
+  PRIVACY_PATH,
+  resolveRoute,
+  servicePath,
+  SERVICES_PATH,
+  type Route,
+} from './routes';
 
 /**
  * Title / description / structured data ของแต่ละหน้า
@@ -42,6 +51,8 @@ const HOME_KEYWORDS = [
 const DEFAULT_IMAGE = '/images/og-image.jpg';
 /** รูปแชร์ของบทความ สร้างไว้ล่วงหน้าที่ public/images/og/<id>.jpg (ดู README) */
 const articleOgImage = (id: string) => `/images/og/${id}.jpg`;
+/** รูปแชร์ของหน้าบริการ */
+const serviceOgImage = (id: string) => `/images/og/service-${id}.jpg`;
 const DEFAULT_IMAGE_ALT = `${siteConfig.name} — ${siteConfig.tagline}`;
 
 export const absoluteUrl = (path: string) => `${siteConfig.url}${path}`;
@@ -134,6 +145,59 @@ export function getPageMeta(route: Route): PageMeta {
             { name: 'หน้าแรก', path: '/' },
             { name: 'บทความ', path: ARTICLES_PATH },
             { name: article.title, path },
+          ]),
+        ],
+      };
+    }
+
+    case 'services':
+      return {
+        title: `บริการของเรา | ${siteConfig.name}`,
+        description:
+          'บริการของ Easy Tax & Account — รับทำบัญชีรายเดือน ยื่นภาษี ปิดงบการเงิน จดบริษัท ทำเงินเดือน และบัญชีสำหรับร้านค้าออนไลน์ สำหรับ SME และธุรกิจออนไลน์',
+        path: SERVICES_PATH,
+        ogType: 'website',
+        image: DEFAULT_IMAGE,
+        imageAlt: DEFAULT_IMAGE_ALT,
+        jsonLd: [
+          breadcrumb([
+            { name: 'หน้าแรก', path: '/' },
+            { name: 'บริการ', path: SERVICES_PATH },
+          ]),
+        ],
+      };
+
+    case 'service': {
+      const { service } = route;
+      const path = servicePath(service);
+      return {
+        title: `${service.pageTitle} | ${siteConfig.name}`,
+        description: service.metaDescription,
+        path,
+        ogType: 'website',
+        image: serviceOgImage(service.id),
+        imageAlt: service.pageTitle,
+        jsonLd: [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: service.pageTitle,
+            description: service.metaDescription,
+            serviceType: service.title,
+            areaServed: ['กรุงเทพมหานคร', 'TH'],
+            url: absoluteUrl(path),
+            provider: {
+              '@type': 'AccountingService',
+              name: siteConfig.name,
+              url: absoluteUrl('/'),
+              telephone: siteConfig.contact.phoneDisplay,
+              email: siteConfig.contact.email,
+            },
+          },
+          breadcrumb([
+            { name: 'หน้าแรก', path: '/' },
+            { name: 'บริการ', path: SERVICES_PATH },
+            { name: service.title, path },
           ]),
         ],
       };
