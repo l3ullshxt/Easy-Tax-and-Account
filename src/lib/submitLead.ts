@@ -31,6 +31,7 @@ function toPayload(values: LeadFormValues, meta: SubmitMeta) {
     services: values.services.map((id) => services.find((service) => service.id === id)?.title ?? id).join(', '),
     plan: pricingPlans.find((plan) => plan.id === values.plan)?.name ?? '',
     details: values.details.trim(),
+    consent: values.consent ? 'ยินยอม' : '',
     pageUrl: window.location.href,
     website: meta.honeypot ?? '',
   };

@@ -124,6 +124,9 @@ export function Footer() {
             <a href="/articles/" className="rounded transition-colors duration-200 hover:text-white">
               บทความ
             </a>
+            <a href="/privacy/" className="rounded transition-colors duration-200 hover:text-white">
+              นโยบายความเป็นส่วนตัว
+            </a>
             <a href="#main" className="inline-flex items-center gap-1.5 rounded transition-colors duration-200 hover:text-white">
               กลับขึ้นด้านบน
               <ArrowUp className="size-4" aria-hidden="true" />

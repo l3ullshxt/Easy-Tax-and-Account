@@ -1,13 +1,33 @@
-import { LeadFormProvider } from './context/LeadFormContext';
+import { lazy, Suspense, useEffect, useState } from 'react';
+import { LeadFormProvider, useLeadForm } from './context/LeadFormContext';
 import { FloatingLineButton } from './components/FloatingLineButton';
 import { Footer } from './components/Footer';
-import { LeadFormModal } from './components/LeadFormModal';
 import { Navbar } from './components/Navbar';
 import { ArticlePage } from './pages/ArticlePage';
 import { ArticlesPage } from './pages/ArticlesPage';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { PrivacyPage } from './pages/PrivacyPage';
 import type { Route } from './routes';
+
+// ฟอร์มขอใบเสนอราคาโหลดเฉพาะตอนเปิดใช้งาน เพื่อให้หน้าเว็บโหลดครั้งแรกเบาลง
+const LeadFormModal = lazy(() => import('./components/LeadFormModal').then((m) => ({ default: m.LeadFormModal })));
+
+function LeadFormSlot() {
+  const { isOpen } = useLeadForm();
+  // โหลดครั้งแรกที่เปิดฟอร์ม แล้วคงไว้ (เพื่อให้การปิด/คืนโฟกัสทำงานตามปกติ)
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    if (isOpen) setLoaded(true);
+  }, [isOpen]);
+
+  if (!loaded) return null;
+  return (
+    <Suspense fallback={null}>
+      <LeadFormModal />
+    </Suspense>
+  );
+}
 
 function Page({ route }: { route: Route }) {
   switch (route.kind) {
@@ -17,6 +37,8 @@ function Page({ route }: { route: Route }) {
       return <ArticlesPage />;
     case 'article':
       return <ArticlePage article={route.article} />;
+    case 'privacy':
+      return <PrivacyPage />;
     case 'notFound':
       return <NotFoundPage />;
   }
@@ -34,7 +56,7 @@ export default function App({ route }: { route: Route }) {
       </main>
       <Footer />
       <FloatingLineButton />
-      <LeadFormModal />
+      <LeadFormSlot />
     </LeadFormProvider>
   );
 }

@@ -94,6 +94,8 @@ export interface LeadFormValues {
   services: string[];
   plan: string;
   details: string;
+  /** ยินยอมให้เก็บและใช้ข้อมูลเพื่อติดต่อกลับ (PDPA) */
+  consent: boolean;
 }
 
 export interface LeadPreset {

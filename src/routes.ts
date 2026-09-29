@@ -12,9 +12,11 @@ export type Route =
   | { kind: 'home' }
   | { kind: 'articles' }
   | { kind: 'article'; article: Article }
+  | { kind: 'privacy' }
   | { kind: 'notFound' };
 
 export const ARTICLES_PATH = '/articles/';
+export const PRIVACY_PATH = '/privacy/';
 
 export function articlePath(article: Article) {
   return `${ARTICLES_PATH}${article.id}/`;
@@ -24,6 +26,7 @@ export function resolveRoute(pathname: string): Route {
   const path = pathname.replace(/\/index\.html$/, '').replace(/\/+$/, '') || '/';
   if (path === '/') return { kind: 'home' };
   if (path === '/articles') return { kind: 'articles' };
+  if (path === '/privacy') return { kind: 'privacy' };
 
   const match = path.match(/^\/articles\/([a-z0-9-]+)$/);
   const article = match && articles.find((item) => item.id === match[1]);
@@ -34,7 +37,7 @@ export function resolveRoute(pathname: string): Route {
 
 /** ทุกหน้าที่ต้อง pre-render และใส่ใน sitemap */
 export function getAllPaths() {
-  return ['/', ARTICLES_PATH, ...articles.map(articlePath)];
+  return ['/', ARTICLES_PATH, ...articles.map(articlePath), PRIVACY_PATH];
 }
 
 /** ลิงก์ไปยัง section ในหน้าแรก (ใช้ได้จากทุกหน้า) เช่น sectionHref('pricing') = "/#pricing" */

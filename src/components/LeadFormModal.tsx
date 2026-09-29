@@ -29,6 +29,7 @@ function validate(values: LeadFormValues, mode: LeadMode): Errors {
     errors.email = 'รูปแบบอีเมลไม่ถูกต้อง เช่น name@email.com';
   }
   if (!values.businessType) errors.businessType = 'กรุณาเลือกประเภทธุรกิจ';
+  if (!values.consent) errors.consent = 'กรุณายินยอมให้เราเก็บข้อมูลเพื่อติดต่อกลับ';
   return errors;
 }
 
@@ -60,6 +61,7 @@ function LeadForm() {
     services: preset.serviceId ? [preset.serviceId] : [],
     plan: selectedPlan?.id ?? '',
     details: '',
+    consent: false,
   });
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -76,6 +78,7 @@ function LeadForm() {
       documentVolume: `${uid}-docs`,
       plan: `${uid}-plan`,
       details: `${uid}-details`,
+      consent: `${uid}-consent`,
     }),
     [uid],
   );
@@ -368,7 +371,46 @@ function LeadForm() {
           </p>
         )}
 
-        <Button type="submit" size="lg" fullWidth className="mt-7" disabled={status === 'submitting'}>
+        <div className="mt-6">
+          <label
+            htmlFor={ids.consent}
+            className={cn(
+              'flex cursor-pointer items-start gap-3 rounded-xl border px-3.5 py-3 text-[0.9375rem] leading-relaxed transition-colors duration-200 has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-brand-500',
+              errors.consent ? 'border-orange-700 bg-orange-50' : 'border-[#cfdcd3] bg-white hover:border-brand-300',
+            )}
+          >
+            <input
+              id={ids.consent}
+              type="checkbox"
+              name="consent"
+              checked={values.consent}
+              onChange={(event) => {
+                setValues((prev) => ({ ...prev, consent: event.target.checked }));
+                if (errors.consent) setErrors((prev) => ({ ...prev, consent: undefined }));
+              }}
+              aria-invalid={errors.consent ? true : undefined}
+              aria-describedby={errors.consent ? `${ids.consent}-error` : undefined}
+              className="mt-1 size-4 shrink-0 accent-brand-600"
+            />
+            <span className="text-ink">
+              ยินยอมให้ {siteConfig.name} เก็บและใช้ข้อมูลนี้เพื่อติดต่อกลับและเสนอบริการ ตาม{' '}
+              <a
+                href="/privacy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-brand-700 underline decoration-brand-300 underline-offset-4 hover:decoration-brand-600"
+              >
+                นโยบายความเป็นส่วนตัว
+              </a>{' '}
+              <span className="text-orange-700" aria-hidden="true">
+                *
+              </span>
+            </span>
+          </label>
+          <FieldError id={`${ids.consent}-error`} message={errors.consent} />
+        </div>
+
+        <Button type="submit" size="lg" fullWidth className="mt-6" disabled={status === 'submitting'}>
           {status === 'submitting' ? (
             <>
               <LoaderCircle className="animate-spin" aria-hidden="true" />

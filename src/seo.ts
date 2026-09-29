@@ -1,5 +1,6 @@
 import { siteConfig } from './config/site';
-import { ARTICLES_PATH, articlePath, getAllPaths, resolveRoute, type Route } from './routes';
+import { faqs } from './data/faqs';
+import { ARTICLES_PATH, articlePath, getAllPaths, PRIVACY_PATH, resolveRoute, type Route } from './routes';
 
 /**
  * Title / description / structured data ของแต่ละหน้า
@@ -38,7 +39,9 @@ const HOME_KEYWORDS = [
   'สำนักงานบัญชี กรุงเทพ',
 ].join(', ');
 
-const DEFAULT_IMAGE = '/images/og-image.png';
+const DEFAULT_IMAGE = '/images/og-image.jpg';
+/** รูปแชร์ของบทความ สร้างไว้ล่วงหน้าที่ public/images/og/<id>.jpg (ดู README) */
+const articleOgImage = (id: string) => `/images/og/${id}.jpg`;
 const DEFAULT_IMAGE_ALT = `${siteConfig.name} — ${siteConfig.tagline}`;
 
 export const absoluteUrl = (path: string) => `${siteConfig.url}${path}`;
@@ -67,7 +70,17 @@ export function getPageMeta(route: Route): PageMeta {
         image: DEFAULT_IMAGE,
         imageAlt: DEFAULT_IMAGE_ALT,
         keywords: HOME_KEYWORDS,
-        jsonLd: [],
+        jsonLd: [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((faq) => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+            })),
+          },
+        ],
       };
 
     case 'articles':
@@ -95,9 +108,9 @@ export function getPageMeta(route: Route): PageMeta {
         description: article.excerpt,
         path,
         ogType: 'article',
-        // รูปบทความเป็น SVG ซึ่ง Facebook / LINE ไม่รองรับ จึงใช้รูปแชร์หลักของเว็บ
-        image: DEFAULT_IMAGE,
-        imageAlt: DEFAULT_IMAGE_ALT,
+        // รูปบทความเป็น SVG ซึ่ง Facebook / LINE ไม่รองรับ จึงใช้รูปแชร์ที่สร้างไว้เป็น .jpg
+        image: articleOgImage(article.id),
+        imageAlt: article.title,
         jsonLd: [
           {
             '@context': 'https://schema.org',
@@ -125,6 +138,23 @@ export function getPageMeta(route: Route): PageMeta {
         ],
       };
     }
+
+    case 'privacy':
+      return {
+        title: `นโยบายความเป็นส่วนตัว | ${siteConfig.name}`,
+        description:
+          'นโยบายความเป็นส่วนตัวของ Easy Tax & Account — เราเก็บข้อมูลอะไร ใช้เพื่ออะไร เก็บนานแค่ไหน และคุณมีสิทธิอะไรบ้างตาม PDPA',
+        path: PRIVACY_PATH,
+        ogType: 'website',
+        image: DEFAULT_IMAGE,
+        imageAlt: DEFAULT_IMAGE_ALT,
+        jsonLd: [
+          breadcrumb([
+            { name: 'หน้าแรก', path: '/' },
+            { name: 'นโยบายความเป็นส่วนตัว', path: PRIVACY_PATH },
+          ]),
+        ],
+      };
 
     case 'notFound':
       return {

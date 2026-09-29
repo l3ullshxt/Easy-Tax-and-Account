@@ -6,6 +6,7 @@
  * 3. สคริปต์นี้                   → dist/index.html, dist/articles/.../index.html, dist/404.html, dist/sitemap.xml
  */
 import fs from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -45,6 +46,16 @@ for (const pathname of entry.getAllPaths()) {
   await write(out, renderPage(pathname));
 }
 await write('404.html', renderPage('/404'));
+
+// เตือนถ้าบทความไหนยังไม่มีรูปแชร์ (og) — ลิงก์ที่แชร์ใน LINE / Facebook จะไม่มีรูป
+for (const pathname of entry.getAllPaths()) {
+  const route = entry.resolveRoute(pathname);
+  if (route.kind !== 'article') continue;
+  const ogFile = path.join(distDir, 'images', 'og', `${route.article.id}.jpg`);
+  if (!existsSync(ogFile)) {
+    console.warn(`  ⚠ ไม่พบรูปแชร์ public/images/og/${route.article.id}.jpg (ดูวิธีสร้างใน README)`);
+  }
+}
 
 const buildDate = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Bangkok' });
 await write('sitemap.xml', entry.renderSitemap(buildDate));
