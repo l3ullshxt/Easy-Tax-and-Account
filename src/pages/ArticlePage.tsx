@@ -1,4 +1,4 @@
-import { CalendarDays, Clock } from 'lucide-react';
+import { CalendarDays, Clock, Lightbulb } from 'lucide-react';
 import { articleDisclaimer, articles } from '../data/articles';
 import { ARTICLES_PATH } from '../routes';
 import type { Article, ArticleBlock } from '../types';
@@ -16,6 +16,29 @@ function Block({ block }: { block: ArticleBlock }) {
   if (typeof block === 'string') return <p>{block}</p>;
   if ('heading' in block) {
     return <h2 className="pt-5 text-xl font-bold text-brand-900 sm:text-2xl">{block.heading}</h2>;
+  }
+  if ('link' in block) {
+    return (
+      <p>
+        {block.link.before}
+        <a
+          href={block.link.href}
+          className="rounded font-semibold text-brand-700 underline decoration-brand-300 underline-offset-4 transition-colors duration-200 hover:text-brand-900 hover:decoration-brand-600"
+        >
+          {block.link.label}
+        </a>
+      </p>
+    );
+  }
+  if ('tip' in block) {
+    return (
+      <p className="flex gap-3 rounded-2xl border border-brand-100 bg-brand-50 px-5 py-4 text-[1rem] leading-relaxed text-brand-900">
+        <Lightbulb className="mt-1 size-5 shrink-0 text-brand-600" aria-hidden="true" />
+        <span>
+          <strong className="font-semibold">พี่ Easy แนะนำ:</strong> {block.tip}
+        </span>
+      </p>
+    );
   }
   return (
     <ul className="space-y-2.5 pl-1">

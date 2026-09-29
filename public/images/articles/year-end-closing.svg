@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="t">
+  <title id="t">ปฏิทินสิ้นปี งบการเงิน และตราประทับรับรอง (placeholder)</title>
+  <rect width="400" height="250" fill="#fbf7ef"/>
+  <circle cx="330" cy="60" r="82" fill="#f2ece0"/>
+  <rect y="200" width="400" height="50" fill="#ece1cc"/>
+  <rect y="196" width="400" height="8" fill="#f4ecdd"/>
+
+  <!-- financial statements -->
+  <g transform="rotate(-4 128 126)">
+    <rect x="60" y="46" width="136" height="158" rx="12" fill="#fff" stroke="#e8ddc6" stroke-width="2"/>
+    <rect x="78" y="66" width="62" height="10" rx="5" fill="#1a643d"/>
+    <path d="M78 92h100M78 106h100M78 120h70" stroke="#eceee9" stroke-width="6" stroke-linecap="round"/>
+    <!-- mini bars -->
+    <rect x="78" y="146" width="18" height="34" rx="4" fill="#c2e3cd"/>
+    <rect x="102" y="134" width="18" height="46" rx="4" fill="#5caf7f"/>
+    <rect x="126" y="152" width="18" height="28" rx="4" fill="#c2e3cd"/>
+    <rect x="150" y="122" width="18" height="58" rx="4" fill="#2f8f5b"/>
+  </g>
+
+  <!-- calendar 31 dec -->
+  <g transform="rotate(6 292 104)">
+    <rect x="232" y="46" width="120" height="118" rx="12" fill="#fff" stroke="#e8ddc6" stroke-width="2"/>
+    <path d="M232 58a12 12 0 0 1 12-12h96a12 12 0 0 1 12 12v20H232z" fill="#1a643d"/>
+    <rect x="258" y="36" width="8" height="22" rx="4" fill="#10402a"/>
+    <rect x="318" y="36" width="8" height="22" rx="4" fill="#10402a"/>
+    <text x="292" y="126" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="38" font-weight="700" fill="#10402a">31</text>
+    <text x="292" y="150" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#2f8f5b">DEC</text>
+  </g>
+
+  <!-- approved stamp -->
+  <g transform="rotate(-12 296 196)">
+    <circle cx="296" cy="196" r="34" fill="none" stroke="#2f8f5b" stroke-width="4"/>
+    <circle cx="296" cy="196" r="27" fill="none" stroke="#2f8f5b" stroke-width="2" stroke-dasharray="5 4"/>
+    <path d="M283 196l8 9 18-19" stroke="#2f8f5b" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- pen -->
+  <g transform="rotate(38 120 212)">
+    <rect x="72" y="206" width="96" height="11" rx="5.5" fill="#f5c93a"/>
+    <path d="M168 206l16 5.5-16 5.5z" fill="#10402a"/>
+  </g>
+</svg>

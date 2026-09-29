@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="t">
+  <title id="t">บัตรพนักงานใหม่ เอกสารสัญญาจ้าง และเช็กลิสต์ (placeholder)</title>
+  <rect width="400" height="250" fill="#f3f8f4"/>
+  <circle cx="72" cy="56" r="74" fill="#eaf5ee"/>
+  <rect y="198" width="400" height="52" fill="#e3ede6"/>
+  <rect y="194" width="400" height="8" fill="#eef5f0"/>
+
+  <!-- employee badge -->
+  <g transform="rotate(-6 118 128)">
+    <rect x="54" y="52" width="128" height="156" rx="14" fill="#fff" stroke="#e1ebe3" stroke-width="2"/>
+    <path d="M100 52h36v14a8 8 0 0 1-8 8h-20a8 8 0 0 1-8-8z" fill="#1a643d"/>
+    <circle cx="118" cy="110" r="26" fill="#f5ceb0"/>
+    <path d="M92 108c-2-22 10-34 26-34s28 12 26 34c-6-11-15-16-26-14-8 2-18 6-26 14z" fill="#5a3721"/>
+    <path d="M84 168c0-22 15-34 34-34s34 12 34 34z" fill="#2f8f5b"/>
+    <rect x="86" y="180" width="64" height="7" rx="3.5" fill="#c2e3cd"/>
+    <rect x="98" y="192" width="40" height="6" rx="3" fill="#e1ebe3"/>
+  </g>
+
+  <!-- contract -->
+  <g transform="rotate(5 268 120)">
+    <rect x="212" y="44" width="116" height="150" rx="10" fill="#fff" stroke="#e1ebe3" stroke-width="2"/>
+    <rect x="228" y="62" width="58" height="9" rx="4.5" fill="#1a643d"/>
+    <path d="M228 88h84M228 104h84M228 120h58M228 136h84" stroke="#e9efe9" stroke-width="6" stroke-linecap="round"/>
+    <path d="M230 168c10-12 18-12 24-4s14 8 26-8" stroke="#217a4b" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- checklist -->
+  <g transform="rotate(8 344 176)">
+    <rect x="300" y="120" width="86" height="94" rx="12" fill="#fff" stroke="#e1ebe3" stroke-width="2"/>
+    <rect x="314" y="138" width="14" height="14" rx="4" fill="#2f8f5b"/>
+    <path d="M317.5 145l3 3 5-5" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M336 145h36" stroke="#dfe7e1" stroke-width="5" stroke-linecap="round"/>
+    <rect x="314" y="164" width="14" height="14" rx="4" fill="#2f8f5b"/>
+    <path d="M317.5 171l3 3 5-5" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M336 171h30" stroke="#dfe7e1" stroke-width="5" stroke-linecap="round"/>
+    <rect x="314" y="190" width="14" height="14" rx="4" fill="#fff" stroke="#93cda9" stroke-width="2"/>
+    <path d="M336 197h34" stroke="#dfe7e1" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- welcome badge -->
+  <circle cx="318" cy="52" r="26" fill="#f5c93a"/>
+  <text x="318" y="59" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#10402a">+1</text>
+</svg>

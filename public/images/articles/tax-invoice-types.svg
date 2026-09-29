@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="t">
+  <title id="t">เปรียบเทียบใบกำกับภาษีเต็มรูปกับใบกำกับภาษีอย่างย่อ (placeholder)</title>
+  <rect width="400" height="250" fill="#eaf5ee"/>
+  <rect x="200" width="200" height="250" fill="#f6efe2"/>
+  <rect y="204" width="400" height="46" fill="#dfeae2"/>
+  <rect x="200" y="204" width="200" height="46" fill="#ebe0cb"/>
+
+  <!-- full tax invoice -->
+  <g>
+    <rect x="34" y="34" width="132" height="176" rx="10" fill="#fff" stroke="#d8e5db" stroke-width="2"/>
+    <rect x="50" y="52" width="76" height="10" rx="5" fill="#1a643d"/>
+    <path d="M50 76h100M50 90h100M50 104h74" stroke="#e5ece6" stroke-width="6" stroke-linecap="round"/>
+    <rect x="50" y="120" width="100" height="30" rx="6" fill="#e1f1e6"/>
+    <path d="M58 130h60M58 140h40" stroke="#93cda9" stroke-width="4" stroke-linecap="round"/>
+    <path d="M50 164h100M50 178h64" stroke="#e5ece6" stroke-width="6" stroke-linecap="round"/>
+    <text x="150" y="196" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#217a4b">VAT 7%</text>
+    <circle cx="160" cy="46" r="20" fill="#2f8f5b"/>
+    <path d="M151 46l6 7 12-13" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- short receipt -->
+  <g>
+    <path d="M244 60h100v134l-11-8-11 8-12-8-11 8-11-8-12 8-11-8-11 8z" fill="#fff" stroke="#e6dbc6" stroke-width="2"/>
+    <path d="M258 84h72M258 100h50M258 116h72M258 132h44" stroke="#efe7d8" stroke-width="6" stroke-linecap="round"/>
+    <rect x="258" y="150" width="72" height="18" rx="5" fill="#f5ecdc"/>
+    <circle cx="338" cy="70" r="20" fill="#c2653f"/>
+    <path d="M331 63l14 14M345 63l-14 14" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- labels -->
+  <text x="100" y="228" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#10402a">FULL</text>
+  <text x="294" y="228" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#8a6a45">SHORT</text>
+</svg>

@@ -53,7 +53,14 @@ export interface Feature {
  * - { heading } = หัวข้อย่อย (h2)
  * - { list } = รายการแบบ bullet
  */
-export type ArticleBlock = string | { heading: string } | { list: string[] };
+export type ArticleBlock =
+  | string
+  | { heading: string }
+  | { list: string[] }
+  /** ย่อหน้าที่มีลิงก์ท้ายข้อความ เช่น ลิงก์ไปบทความอื่น */
+  | { link: { before?: string; label: string; href: string } }
+  /** กล่องคำแนะนำจากทีม Easy */
+  | { tip: string };
 
 export interface Article {
   /** ใช้เป็น URL ของบทความ: /articles/<id>/ (ภาษาอังกฤษตัวเล็ก คั่นด้วย -) */
