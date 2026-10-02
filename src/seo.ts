@@ -193,6 +193,17 @@ export function getPageMeta(route: Route): PageMeta {
               telephone: siteConfig.contact.phoneDisplay,
               email: siteConfig.contact.email,
             },
+            ...(service.packages
+              ? {
+                  offers: service.packages.map((pkg) => ({
+                    '@type': 'Offer',
+                    name: `${service.title} — ${pkg.name}`,
+                    price: pkg.price.replace(/,/g, ''),
+                    priceCurrency: 'THB',
+                    url: absoluteUrl(path),
+                  })),
+                }
+              : {}),
           },
           breadcrumb([
             { name: 'หน้าแรก', path: '/' },

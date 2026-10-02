@@ -41,6 +41,12 @@ export interface Service {
   process?: { step: string; detail: string }[];
   /** id ของบทความที่เกี่ยวข้อง */
   relatedArticleIds: string[];
+  /** แพ็กเกจราคาของบริการนี้ (ถ้ามี จะแสดงเป็นการ์ดราคาในหน้าบริการ) */
+  packages?: ServicePackage[];
+  /** จุดเด่นของบริการ แสดงเป็นเช็กลิสต์ "ทำไมต้อง Easy" */
+  highlights?: string[];
+  /** หมายเหตุเรื่องราคา/เงื่อนไข แสดงใต้แพ็กเกจ */
+  priceNotes?: string[];
 }
 
 export interface PricingPlan {
@@ -117,8 +123,28 @@ export interface LeadFormValues {
   consent: boolean;
 }
 
+export interface ServicePackage {
+  id: string;
+  /** ชื่อแพ็กเกจ เช่น START */
+  name: string;
+  /** คำโปรยสั้น ๆ ใต้ชื่อแพ็กเกจ */
+  tagline: string;
+  /** ราคาแบบเหมาจ่าย เช่น "8,900" */
+  price: string;
+  unit: string;
+  /** ข้อความใต้ราคา เช่น "รวมค่าธรรมเนียมราชการตามรายการที่กำหนด" */
+  priceNote?: string;
+  /** หัวข้อเหนือรายการ เช่น "ได้รับทุกอย่างใน START พร้อม" */
+  featuresLabel?: string;
+  features: string[];
+  highlighted?: boolean;
+  badge?: string;
+}
+
 export interface LeadPreset {
   mode?: LeadMode;
   planId?: string;
   serviceId?: string;
+  /** ข้อความที่เติมในช่อง "รายละเอียดเพิ่มเติม" ให้อัตโนมัติ เช่น แพ็กเกจที่ลูกค้าสนใจ */
+  note?: string;
 }

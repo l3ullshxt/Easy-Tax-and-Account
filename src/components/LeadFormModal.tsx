@@ -60,7 +60,7 @@ function LeadForm() {
     vatStatus: '',
     services: preset.serviceId ? [preset.serviceId] : [],
     plan: selectedPlan?.id ?? '',
-    details: '',
+    details: preset.note ?? '',
     consent: false,
   });
   const [errors, setErrors] = useState<Errors>({});
