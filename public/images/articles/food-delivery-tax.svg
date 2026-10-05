@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="t">
+  <title id="t">กระเป๋าส่งอาหารเดลิเวอรี่ สมาร์ตโฟนรับออเดอร์ และเหรียญค่าคอมมิชชัน (placeholder)</title>
+  <rect width="400" height="250" fill="#f6efe2"/>
+  <circle cx="86" cy="54" r="72" fill="#eaf5ee"/>
+  <rect y="196" width="400" height="54" fill="#e7d8bb"/>
+  <rect y="192" width="400" height="8" fill="#efe3cc"/>
+
+  <!-- delivery bag -->
+  <g>
+    <path d="M96 96h104a10 10 0 0 1 10 10v84a10 10 0 0 1-10 10H96a10 10 0 0 1-10-10v-84a10 10 0 0 1 10-10z" fill="#2f8f5b"/>
+    <path d="M96 96h104a10 10 0 0 1 10 10v16H86v-16a10 10 0 0 1 10-10z" fill="#247a4a"/>
+    <rect x="124" y="78" width="48" height="20" rx="8" fill="#1a643d"/>
+    <rect x="112" y="136" width="72" height="44" rx="8" fill="#fbf7ef"/>
+    <path d="M124 150h48M124 162h32" stroke="#c2e3cd" stroke-width="6" stroke-linecap="round"/>
+    <path d="M148 108v8" stroke="#e8f5ec" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- noodle cup -->
+  <path d="M232 128h50l-7 62a10 10 0 0 1-10 9h-16a10 10 0 0 1-10-9z" fill="#fff"/>
+  <path d="M228 120h58v12h-58z" fill="#f5c93a"/>
+  <path d="M242 112c-5-8 5-12 0-20M258 112c-5-8 5-12 0-20M272 112c-5-8 5-12 0-20" stroke="#cfe3d6" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- phone with order -->
+  <g transform="rotate(8 330 128)">
+    <rect x="296" y="56" width="74" height="132" rx="14" fill="#1f2a24"/>
+    <rect x="302" y="64" width="62" height="116" rx="9" fill="#fff"/>
+    <rect x="310" y="74" width="46" height="8" rx="4" fill="#1a643d"/>
+    <rect x="310" y="90" width="46" height="24" rx="6" fill="#e1f1e6"/>
+    <path d="M318 100h30" stroke="#93cda9" stroke-width="4" stroke-linecap="round"/>
+    <rect x="310" y="122" width="46" height="8" rx="4" fill="#efe7d8"/>
+    <rect x="310" y="136" width="30" height="8" rx="4" fill="#efe7d8"/>
+    <rect x="310" y="154" width="46" height="18" rx="9" fill="#2f8f5b"/>
+    <path d="M326 163h14" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- commission badge -->
+  <circle cx="62" cy="150" r="30" fill="#fff" stroke="#e6dbc6" stroke-width="3"/>
+  <text x="62" y="146" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#217a4b">GP</text>
+  <text x="62" y="163" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#c2653f">-25%</text>
+
+  <!-- coins -->
+  <ellipse cx="366" cy="206" rx="20" ry="7" fill="#e2b014"/>
+  <rect x="346" y="193" width="40" height="13" fill="#f5c93a"/>
+  <ellipse cx="366" cy="193" rx="20" ry="7" fill="#fbd86a"/>
+</svg>
