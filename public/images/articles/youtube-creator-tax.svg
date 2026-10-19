@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="t">
+  <title id="t">กล้องถ่ายวิดีโอ หน้าจอปุ่มเล่น และเหรียญรายได้จากช่องออนไลน์ (placeholder)</title>
+  <rect width="400" height="250" fill="#eef6f1"/>
+  <circle cx="318" cy="56" r="80" fill="#f7fbf8"/>
+  <rect y="198" width="400" height="52" fill="#dfeae2"/>
+  <rect y="194" width="400" height="8" fill="#e9f2eb"/>
+
+  <!-- screen with play button -->
+  <g transform="rotate(-4 196 112)">
+    <rect x="118" y="46" width="166" height="112" rx="14" fill="#fff" stroke="#d8e5db" stroke-width="2"/>
+    <rect x="118" y="46" width="166" height="22" rx="14" fill="#1a643d"/>
+    <rect x="118" y="58" width="166" height="10" fill="#1a643d"/>
+    <circle cx="132" cy="57" r="3.5" fill="#93cda9"/>
+    <circle cx="143" cy="57" r="3.5" fill="#c2e3cd"/>
+    <rect x="152" y="86" width="98" height="52" rx="10" fill="#e1f1e6"/>
+    <circle cx="201" cy="112" r="21" fill="#2f8f5b"/>
+    <path d="M196 103l13 9-13 9z" fill="#fff"/>
+    <rect x="152" y="146" width="62" height="6" rx="3" fill="#e6ece8"/>
+  </g>
+
+  <!-- camera on tripod -->
+  <g>
+    <path d="M38 118h58a8 8 0 0 1 8 8v34a8 8 0 0 1-8 8H38a8 8 0 0 1-8-8v-34a8 8 0 0 1 8-8z" fill="#2f8f5b"/>
+    <path d="M104 134l24-13v47l-24-13z" fill="#247a4a"/>
+    <circle cx="60" cy="143" r="12" fill="#e8f5ec"/>
+    <circle cx="60" cy="143" r="5" fill="#1a643d"/>
+    <rect x="52" y="106" width="22" height="12" rx="4" fill="#155033"/>
+    <path d="M67 168l-18 30M67 168l18 30M67 176v22" stroke="#9aa7a0" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- coins -->
+  <g>
+    <ellipse cx="320" cy="186" rx="26" ry="9" fill="#e2b014"/>
+    <rect x="294" y="170" width="52" height="16" fill="#f5c93a"/>
+    <ellipse cx="320" cy="170" rx="26" ry="9" fill="#fbd86a"/>
+    <rect x="294" y="154" width="52" height="16" fill="#f5c93a"/>
+    <ellipse cx="320" cy="154" rx="26" ry="9" fill="#fde58f"/>
+    <text x="320" y="159" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="#8a6a16">฿</text>
+  </g>
+
+  <!-- tax badge -->
+  <circle cx="330" cy="62" r="30" fill="#fff" stroke="#c2e3cd" stroke-width="3"/>
+  <text x="330" y="58" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#217a4b">TAX</text>
+  <text x="330" y="74" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#c2653f">TH/US</text>
+</svg>
