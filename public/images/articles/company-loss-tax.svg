@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-labelledby="t">
+  <title id="t">งบการเงินที่แสดงผลขาดทุน แบบภาษี และปฏิทินกำหนดยื่น (placeholder)</title>
+  <rect width="400" height="250" fill="#f3f8f4"/>
+  <circle cx="324" cy="58" r="78" fill="#eaf5ee"/>
+  <rect y="198" width="400" height="52" fill="#e3ede6"/>
+  <rect y="194" width="400" height="8" fill="#eef5f0"/>
+
+  <!-- financial statement with falling chart -->
+  <g transform="rotate(-4 134 122)">
+    <rect x="52" y="44" width="164" height="156" rx="12" fill="#fff" stroke="#dde8e1" stroke-width="2"/>
+    <rect x="70" y="62" width="64" height="10" rx="5" fill="#1a643d"/>
+    <path d="M70 86h128M70 100h92" stroke="#eef2ef" stroke-width="6" stroke-linecap="round"/>
+    <!-- bars getting shorter -->
+    <rect x="70" y="136" width="20" height="42" rx="4" fill="#c2e3cd"/>
+    <rect x="96" y="148" width="20" height="30" rx="4" fill="#c2e3cd"/>
+    <rect x="122" y="158" width="20" height="20" rx="4" fill="#e4bda9"/>
+    <rect x="148" y="166" width="20" height="12" rx="4" fill="#d79a80"/>
+    <!-- down trend -->
+    <path d="M74 124l30 14 28-10 34 22" stroke="#c2653f" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m158 148 10 2-2-11" stroke="#c2653f" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- tax form -->
+  <g transform="rotate(6 286 128)">
+    <rect x="230" y="58" width="112" height="140" rx="10" fill="#fff" stroke="#dde8e1" stroke-width="2"/>
+    <rect x="230" y="58" width="112" height="26" rx="10" fill="#1a643d"/>
+    <rect x="230" y="72" width="112" height="12" fill="#1a643d"/>
+    <text x="286" y="77" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" fill="#fff">PND 50</text>
+    <path d="M246 102h80M246 116h80M246 130h52" stroke="#eef2ef" stroke-width="6" stroke-linecap="round"/>
+    <rect x="246" y="146" width="80" height="26" rx="6" fill="#e1f1e6"/>
+    <path d="M258 159h34" stroke="#93cda9" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="316" cy="180" r="11" fill="#2f8f5b"/>
+    <path d="M311 180l4 4 7-8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- deadline badge -->
+  <circle cx="86" cy="60" r="30" fill="#fff" stroke="#c2e3cd" stroke-width="3"/>
+  <text x="86" y="56" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#217a4b">150</text>
+  <text x="86" y="71" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="700" fill="#5c6c62">DAYS</text>
+
+  <!-- leaf -->
+  <path d="M372 194c-4-28 6-46 22-54 2 22-8 44-22 54z" fill="#4caf73"/>
+</svg>
